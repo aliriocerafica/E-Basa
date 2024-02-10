@@ -1,0 +1,63 @@
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom CSS */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+
+  background-color: white;
+}
+
+/* Define a custom class for the background image */
+.bg-custom {
+  background-image: url('/bg.png');
+  /* Use absolute path */
+  background-size: cover;
+  background-position: center;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* styles.css */
+.form-container {
+  width: 500px;
+  height: 490px;
+}
+
+.input-field {
+  height: 50px;
+  width: 390px;
+}
+
+.submit-button {
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-image {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  height: auto;
+  width: auto;
+  transform: translateX(133%);
+  margin-top: 10px; /* Adjust margin top as needed */
+}
+
+/* Define a class for button text with text shadow */
+.button-text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adjust values as needed */
+}
+.inter-font {
+  font-family: 'Inter', sans-serif;
+}

@@ -1,0 +1,7 @@
+.dash-bg {
+  background-image: url('/dash.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* This will make the background cover the entire viewport */
+}

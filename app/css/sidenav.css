@@ -1,0 +1,147 @@
+
+.items-center{
+    margin-right: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    
+}
+.search {
+    width: 300px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 9999px;
+    outline: none;
+    font-size: 1rem;
+    background-color:#49F6FF ;
+}
+
+.search:focus {
+    border-color: #12565a;
+}
+.side-nav {
+  
+    height: 100vh;
+    width: 20rem;
+    padding: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    float: left;
+}
+
+.top-nav {
+    width: calc(100% - 20rem); /* Subtract the width of the side navigation */
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    float: right;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color:white;
+}
+
+.home-side{
+ 
+    background-color: #756AAE;
+    color: white;
+    height: 115px;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.home{
+    margin-left: 90px;
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+}
+.home-side:hover {
+    background-color: #614FBC; /* Change to desired background color on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
+   
+}
+  
+.home-side:hover .home {
+    color: white; /* Change to desired text color on hover */
+}
+/* Eend Home button */
+.list-side{
+
+    background-color: #FCC40B;;
+    color: white;
+    height: 115px;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.list{
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+    margin-left: 50px;
+}
+.list-side:hover {
+    background-color: #fad044; /* Change to desired background color on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+  
+.list-side:hover .home {
+    color: white; /* Change to desired text color on hover */
+}
+/* Eend list button */
+.rank-side{
+    background-color: #FE7870;;
+    color: white;
+    height: 115px;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.rank{
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+    margin-left: 50px;
+}
+.rank-side:hover {
+    background-color: #f54e45; /* Change to desired background color on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+  
+.rank-side:hover .home {
+    color: white; /* Change to desired text color on hover */
+}
+/* Eend rank button */
+.blank-side{
+    background-color: #39B8FF;;
+    color: white;
+    height: 115px;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.blank{
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+    margin-left: 50px;
+}
+.blank-side:hover {
+    background-color: #0091e6; /* Change to desired background color on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+  
+.blank-side:hover .home {
+    color: white; /* Change to desired text color on hover */
+}
+/* Eend blank button */
+
+.test-side{
+    background-color:  #85C763;
+    color: white;
+    height: 115px;
+    font-size: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.test{
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+    margin-left: 50px;
+}
+.test-side:hover {
+    background-color: #78ee3e; /* Change to desired background color on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+  
+.test-side:hover .home {
+    color: white; /* Change to desired text color on hover */
+}
