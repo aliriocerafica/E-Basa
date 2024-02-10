@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import RoleSelectionButtons from '../components/RoleButton'; // Import the RoleSelectionButtons component
 import '../css/logad.css';
 
-
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');

@@ -4,7 +4,7 @@ import { Dosis, Roboto } from "next/font/google";
 import "./globals.css";
 const more = localfont ({
   src:[{
-    path:"../public/font/More-sugar.regular.ttf",
+    path:"../font/More-sugar.regular.ttf",
     weight:"1",
     
   }],
