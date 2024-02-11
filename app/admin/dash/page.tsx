@@ -1,130 +1,164 @@
-'use client'
-import React from 'react';
-import { Dosis } from 'next/font/google';
-import { IconButton, Typography, List } from '@material-tailwind/react';
-import Name from '../components/Name'; // Import the Name component
-import SideandtopNav from '../components/SideandtopNav'; // Import the SideNav component
-import '../css/dash.css';
+"use client";
+import React from "react";
+import Name from "../components/Name"; // Import the Name component
+import SideandtopNav from "../components/SideandtopNav"; // Import the SideNav component
+import "../css/dash.css";
+
 const Page = () => {
   return (
-   <div className="dash-bg">
+    <div className="dash-bg">
       {/* Render the SideNav component */}
       <SideandtopNav />
       {/* Use flex-grow to occupy remaining space */}
-    
-        {/* Render the Name component */}
-        <Name />
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" className="px-6 py-3">
-                    Product name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Color
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Category
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Price
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Action
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                </th>
-                <td className="px-6 py-4">
-                    Silver
-                </td>
-                <td className="px-6 py-4">
-                    Laptop
-                </td>
-                <td className="px-6 py-4">
-                    $2999
-                </td>
-                <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td className="px-6 py-4">
-                    White
-                </td>
-                <td className="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td className="px-6 py-4">
-                    $1999
-                </td>
-                <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                </th>
-                <td className="px-6 py-4">
-                    Black
-                </td>
-                <td className="px-6 py-4">
-                    Accessories
-                </td>
-                <td className="px-6 py-4">
-                    $99
-                </td>
-                <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Google Pixel Phone
-                </th>
-                <td className="px-6 py-4">
-                    Gray
-                </td>
-                <td className="px-6 py-4">
-                    Phone
-                </td>
-                <td className="px-6 py-4">
-                    $799
-                </td>
-                <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple Watch 5
-                </th>
-                <td className="px-6 py-4">
-                    Red
-                </td>
-                <td className="px-6 py-4">
-                    Wearables
-                </td>
-                <td className="px-6 py-4">
-                    $999
-                </td>
-                <td className="px-6 py-4">
-                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 
+      {/* Render the Name component */}
+      <Name />
+
+      {/* Table */}
+      <div className="header-act ml-[450px]" style={{ width: "1060px" }}>
+        {" "}
+        <header>Activity</header>
+      </div>
+      <div
+        className="relative overflow-x-auto  sm:rounded-lg ml-[450px]"
+        style={{ width: "1060px" }}
+      >
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="heads ">
+            <tr>
+              <th className="px-6 py-3 text-left text-lg    uppercase tracking-wider ">
+                ID
+              </th>
+              <th className="px-6 py-3 text-left text-lg    uppercase tracking-wider ">
+                Full Name
+              </th>
+              <th className="px-6 py-3 text-left text-lg uppercase tracking-wider">
+                Date
+              </th>
+              <th className="px-6 py-3 text-left text-lg uppercase tracking-wider">
+                Role
+              </th>
+              <th className="px-6 py-3 text-left text-lg  uppercase tracking-wider">
+                Status
+              </th>
+              <th className="px-6 py-3 text-left text-lg  uppercase tracking-wider">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200 ">
+          <tr className="bod">
+              <td className="px-6 py-4 whitespace-nowrap">k112</td>
+              <td className="px-6 py-4 whitespace-nowrap">Jane Doe</td>
+              <td className="px-6 py-4 whitespace-nowrap">October 23 , 2023  - 8:00 AM</td>
+              <td className="px-6 py-4 whitespace-nowrap">Admin</td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Active
+                </span>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+              <button className="px-2 py-1  bg-blue-400 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/edit.png"
+                    alt="Edit"
+                    className="h-6 w-6"
+                  />
+                </button>
+                <button className="ml-2 px-2 py-1 rounded-md bg-green-400 hover:bg-green-300 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/delete.png"
+                    alt="Delete"
+                    className="h-6 w-6"
+                  />
+                </button>
+              </td>
+            </tr>
+            <tr className="bod">
+              <td className="px-6 py-4 whitespace-nowrap">k112</td>
+              <td className="px-6 py-4 whitespace-nowrap">Jane Doe</td>
+              <td className="px-6 py-4 whitespace-nowrap">October 23 , 2023  - 8:00 AM</td>
+              <td className="px-6 py-4 whitespace-nowrap">Admin</td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Active
+                </span>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+              <button className="px-2 py-1  bg-blue-400 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/edit.png"
+                    alt="Edit"
+                    className="h-6 w-6"
+                  />
+                </button>
+                <button className="ml-2 px-2 py-1 rounded-md bg-green-400 hover:bg-green-300 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/delete.png"
+                    alt="Delete"
+                    className="h-6 w-6"
+                  />
+                </button>
+              </td>
+            </tr>
+            
+            <tr className="bod">
+              <td className="px-6 py-4 whitespace-nowrap">k112</td>
+              <td className="px-6 py-4 whitespace-nowrap">Jane Doe</td>
+              <td className="px-6 py-4 whitespace-nowrap">October 23 , 2023  - 8:00 AM</td>
+              <td className="px-6 py-4 whitespace-nowrap">Admin</td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Active
+                </span>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+              <button className="px-2 py-1  bg-blue-400 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/edit.png"
+                    alt="Edit"
+                    className="h-6 w-6"
+                  />
+                </button>
+                <button className="ml-2 px-2 py-1 rounded-md bg-green-400 hover:bg-green-300 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/delete.png"
+                    alt="Delete"
+                    className="h-6 w-6"
+                  />
+                </button>
+              </td>
+            </tr>
+            <tr className="bod">
+              <td className="px-6 py-4 whitespace-nowrap">k113</td>
+              <td className="px-6 py-4 whitespace-nowrap">John Doe</td>
+              <td className="px-6 py-4 whitespace-nowrap">October 23 , 2023  - 8:00 AM</td>
+              <td className="px-6 py-4 whitespace-nowrap">User</td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                  Inactive
+                </span>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <button className="px-2 py-1  bg-blue-400 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/edit.png"
+                    alt="Edit"
+                    className="h-6 w-6"
+                  />
+                </button>
+                <button className="ml-2 px-2 py-1 rounded-md bg-green-400 hover:bg-green-300 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
+                  <img
+                    src="/delete.png"
+                    alt="Delete"
+                    className="h-6 w-6"
+                  />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

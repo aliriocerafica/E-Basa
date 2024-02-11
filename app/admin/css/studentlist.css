@@ -1,0 +1,39 @@
+.dash-bg {
+    background-image: url("/dash.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* This will make the background cover the entire viewport */
+  }
+  
+  /* Add background color to the table */
+  
+  .heads {
+   
+    background-color: white;
+    color: black;
+
+    font-family: 'Inter', sans-serif;
+    margin-top: 200px;
+  
+  
+  }
+  .uppercase {
+    text-transform: none;
+  }
+  .header-act{
+    
+    font-size: 24px;
+    font-weight: bold;
+    max-width: 100%; /* Set the maximum width to 100% */
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  .bod{
+    font-family: 'Harmattan', sans-serif;
+  }
+ 
+  
