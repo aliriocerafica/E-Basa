@@ -15,10 +15,11 @@
     "classname": "^0.0.0",
     "classnames": "^2.5.1",
     "dom": "^0.0.3",
-    "next": "14.1.0",
+    "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "router": "^1.3.8"
+    "router": "^1.3.8",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@types/node": "^20",
