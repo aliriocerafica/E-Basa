@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./styles/login.css"; // Import the CSS file
+import "../styles/login.css"; // Import the CSS file
 
 export default function Home() {
   const handleLogin = () => {
