@@ -8,7 +8,7 @@ const Name = () => {
       <header className="header">
         <h1>Dashboard</h1>
       </header>
-      <div className="flex flex-wrap justify-center items-center name-list">
+      <div className="flex flex-justify items-center name-list">
         {/* Box 1 */}
         <div className="box-wrapper">
           <div className="inline-block p-4 bg-white shadow-md rounded-lg box">

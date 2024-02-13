@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import SideandtopNav from "../components/SideandtopNav"; // Import the SideNav component
+import SideandtopNav from "./SideandtopNav"; // Import the SideNav component
 import "../css/studentlist.css";
 
 // Define the component
-const Page = () => {
+const StudentList = () => {
   return (
     <div className="dash-bg">
       {/* Render the SideNav component */}
-      <SideandtopNav />
+   
   
       {/* Render the table */}
       <div className="student">
@@ -247,4 +247,4 @@ const Page = () => {
 };
 
 // Export the component
-export default Page;
+export default StudentList;
