@@ -1,46 +1,19 @@
-'use client';
 import Image from "next/image";
-import { useState } from "react";
 import "./styles/login.css"; // Import the CSS file
 
 export default function Home() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = async () => {
-    try {
-      const formData = new URLSearchParams();
-      formData.append('username', username);
-      formData.append('password', password);
-  
-      const response = await fetch("http://127.0.0.1:8000/login/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: formData.toString(),
-      });
-  
-      if (response.ok) {
-        // Login successful, redirect or show success message
-        console.log("Login successful");
-      } else {
-        // Login failed, handle error
-        console.error("Login failed");
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-    }
-  };  
+  const handleLogin = () => {
+    // Implement your login logic here
+  };
 
   return (
     <main>
-      <div className='loginbot'>
-        <Image src="/loginbot.png" alt="bot" layout="responsive" width={1367} height={200}/>
+      <div className="loginbot">
+        <Image src="/loginbot.png" alt="bot" width={1367} height={200} />
       </div>
-      <div className='loginbg' >
+      <div className="loginbg">
         <div className="clouds overflow-hide">
-          <Image src="/clouds1.png" alt="Clouds" layout="responsive" width={1500} height={350} />
+          <Image src="/clouds1.png" alt="Clouds" width={1500} height={350} />
         </div>
         <Image
           src="/nav-logo.png"
@@ -49,14 +22,12 @@ export default function Home() {
           width={200}
           height={100}
         />
-        <div className="login-container" >
+        <div className="login-container">
           <input
             type="text"
             id="username"
             placeholder="Numero ng ID"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
             required
           />
           <input
@@ -64,13 +35,9 @@ export default function Home() {
             id="password"
             placeholder="Password"
             name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="button" onClick={handleLogin}>
-            MAG LOG IN
-          </button>
+          <button type="button">MAG LOG IN</button>
         </div>
       </div>
     </main>

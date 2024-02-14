@@ -23,7 +23,7 @@ const LoginAdmin: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-custom">
+    <div className="flex flex-col items-center">
       <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-md pb-8 mb-4 form-container">
         <header className="bg-cyan-400 py-4 mb-4 rounded-t-3xl focus:outline-none focus:shadow-outline relative shadow-md" style={{
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), inset 0 5px 10px -5px rgba(0,0,0,0.5)'
@@ -68,7 +68,7 @@ const LoginAdmin: React.FC = () => {
         </div>
       </form>
 
-      <img src="/admin.png" alt="Teacher" className="custom-image"></img>
+      <img src="/admin.png" alt="Teacher" className="custom-image1"></img>
     </div>
   );
 };

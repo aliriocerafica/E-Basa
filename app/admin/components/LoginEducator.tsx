@@ -26,17 +26,15 @@ const LoginEducator: React.FC = () => {
     console.log('Password:', password);
     console.log('Role:', role);
   };
-
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-custom">
-      <div className="relative">
+    <div className="flex flex-col items-center ">
+      <div className="form-wrapper">
         <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-md pb-8 mb-4 form-container">
           <header className="bg-cyan-400 py-4 mb-4 rounded-t-3xl focus:outline-none focus:shadow-outline relative shadow-md" style={{ 
             boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), inset 0 5px 10px -5px rgba(0,0,0,0.5)'
           }}>
             <h1 className="text-white text-center text-3xl">Log In</h1>
           </header>
-
           <div className="mb-2 mx-10 px-5 pt-6 text-cyan-500 inter-font">
             <label className="block text-cyan-500 mb-2 text-2xl" htmlFor="username">
               Username
@@ -63,7 +61,6 @@ const LoginEducator: React.FC = () => {
               onChange={handlePasswordChange}
             />
           </div>
-
           <div className="flex items-center justify-center px-8 pt-6">
             <button
               className="bg-cyan-400 hover:bg-sky-300 text-2xl text-white  py-2 px-16 rounded-full focus:outline-none focus:shadow-outline relative shadow-md submit-button button-text-shadow" // Add button-text-shadow class here
@@ -73,7 +70,7 @@ const LoginEducator: React.FC = () => {
             </button>
           </div>
         </form>
-        <img src="/Teacher.png" alt="Teacher" className="custom-image"></img>
+        <img src="/Teacher.png" alt="Teacher" className='custom-image1'></img>
       </div>
     </div>
   );
