@@ -1,12 +1,10 @@
 'use client'
 import React, { useState } from 'react';
-import RoleSelectionButtons from '../components/RoleButton'; // Import the RoleSelectionButtons component
 import '../css/logad.css';
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [role, setRole] = useState<string>('admin'); // Default role is teacher
 
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
@@ -16,23 +14,15 @@ const LoginPage: React.FC = () => {
     setPassword(event.target.value);
   };
 
-  const handleRoleChange = (selectedRole: string) => {
-    setRole(selectedRole);
-  };
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission, e.g., send data to server
     console.log('Username:', username);
     console.log('Password:', password);
-    console.log('Role:', role);
   };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-custom">
-      {/* Render the RoleSelectionButtons component */}
-      <RoleSelectionButtons role={role} onRoleChange={handleRoleChange} />
-
       <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-md pb-8 mb-4 form-container">
         <header className="bg-cyan-400 py-4 mb-4 rounded-t-3xl focus:outline-none focus:shadow-outline relative shadow-md" style={{
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), inset 0 5px 10px -5px rgba(0,0,0,0.5)'
@@ -74,7 +64,6 @@ const LoginPage: React.FC = () => {
           >
             Submit
           </button>
-
         </div>
       </form>
 

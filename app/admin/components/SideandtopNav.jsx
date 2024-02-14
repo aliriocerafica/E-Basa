@@ -1,10 +1,9 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "../css/sidenav.css";
 import { Card, List, ListItem, ListItemSuffix, Chip } from "@material-tailwind/react";
-import { UserCircleIcon } from "@heroicons/react/24/solid";
-import StudentList from "../components/StudentList";
+import StudentList from "./StudentList";
 
 export function SideNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +32,17 @@ export function SideNav() {
     };
   }, []);
 
+    // const [showStudentList, setShowStudentList1] = useState(false);
+    const [showStudentList, setShowStudentList2] = useState(false);
+  
+    // const handleClick1 = () => {
+    //   setShowStudentList(true);
+    // };
+  
+    const handleClick2 = () => {
+      setShowStudentList2(true);
+    };
+
   return (
     <div>
       <div className="flex flex-col sm:flex-row justify-between p-4 border-b border-blue-gray-200 top-nav" style={{ width: topNavWidth }}>
@@ -42,7 +52,7 @@ export function SideNav() {
         <input type="text" placeholder="Search..." className="search mb-4 sm:mb-0" />
         <div className="flex items-center">
           <span className="mr-2">John Doe Admin </span>
-          <UserCircleIcon className="h-8 w-8 text-blue-gray-600" />
+          {/* <UserCircleIcon className="h-8 w-8 text-blue-gray-600" /> */}
         </div>
       </div>
 
@@ -56,10 +66,10 @@ export function SideNav() {
             <ListItem className="flex items-center home-side">
               <span className="ml-2 home">HOME</span>
             </ListItem>
-            <ListItem className="flex items-center list-side">
-              <Link href="/StudentList">
-                <span className="ml-2 list">STUDENT LIST</span>
-              </Link>
+            <ListItem className="flex items-center list-side" onClick={handleClick2}>
+            <span className="ml-2 list">STUDENT LIST</span>
+              {/* <Link href="/StudentList">
+              </Link> */}
             </ListItem>
             <ListItem className="flex items-center rank-side">
               <span className="ml-2 rank">STUDENT RANKINGS</span>
@@ -76,6 +86,7 @@ export function SideNav() {
           </List>
         </Card>
       )}
+    {showStudentList && <StudentList />}
     </div>
   );
 }
