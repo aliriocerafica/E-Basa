@@ -1,61 +1,65 @@
+@import url('https://fonts.cdnfonts.com/css/more-sugar');
+
 body {
   max-width: 100%;
-  background-color: #13dffe;
+  background-color: #4CB1E5;
+  font-family: 'More Sugar', sans-serif;
 }
 
-.centered-image {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.clouds {
-  position: fixed;
-  overflow: hidden;
-  left: -1%;
-}
-
-.clouds img {
-  animation: slidein 50s linear infinite; /* Adjust the duration as needed */
-  background-repeat: repeat;
-}
-
-@keyframes slidein {
-  from {
-    transform: translateX(0%);
+  .centered-image {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
   }
-  to {
-    transform: translateX(-100%);
+  
+  .clouds {
+        position: fixed;
+        overflow: hidden;
+        left: -1%;
+        
+      }
+  
+      .clouds img {
+        animation: slidein 75s linear infinite; /* Adjust the duration as needed */
+        background-repeat: repeat;
+      }
+  
+      @keyframes slidein {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+  
+      button {
+        width: 400px;
+        height: 60px;
+      margin: 10px 0;
+      background-color: #12BBD8;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 30px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      font-family: 'More Sugar', sans-serif;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 20px;
+      letter-spacing: 3px;
   }
-}
-
-button {
-  width: 400px;
-  height: 60px;
-  margin: 10px 0;
-  background-color: #12bbd8;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-top: 30px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset,
-    0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-family: "Happy School", sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: 3px;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  margin-top: 150px;
-  left: 37%;
-  top: 5%;
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 150px;
+    left: 37%;
+    top: 5%;
 }
 
 .login-container {
@@ -80,7 +84,7 @@ input {
   box-sizing: border-box;
   color: #000000;
   border-radius: 50px;
-  font-family: "Happy School", sans-serif;
+  font-family: "More Sugar", sans-serif;
   font-weight: bold;
   font-size: 15px;
   letter-spacing: 2px;

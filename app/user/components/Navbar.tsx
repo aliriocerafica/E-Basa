@@ -6,12 +6,11 @@ const Navbar = () => {
 
   return (
     <>
-      <Image src='/whitebar.png' alt='bar' id='whitebar' width={100} height={50} />
 
       <div className="topnav">
         <Link href="/home">
        
-            <Image src="/nav-logo.png" alt="Home" width={230} height={115} />
+            <Image src="/nav-logo.png" alt="Home" width={200} height={100} />
         
         </Link>
 
@@ -26,15 +25,14 @@ const Navbar = () => {
             <div className="user-search-container">
               <div className="search-bar">
                 <input type="text" id="search-input" />
-                <Image src="/search-logo.png" id="search-button" alt="Search" width={50} height={50} />
+                <Image src="/search-logo.png" id="search-button" alt="Search" width={40} height={40} />
               </div>
             </div>
-     
         </Link>
 
         <Link href="/profile">
          
-            <Image src="/user-icon.png" alt="user-icon" width={130} height={115} />
+            <Image src="/user-icon.png" alt="user-icon" width={110} height={100} />
     
         </Link>
       </div>

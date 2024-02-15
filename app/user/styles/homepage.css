@@ -38,8 +38,6 @@ footer {
         .topnav {
   overflow: hidden;
   position: fixed;
-
-  
 }
 
 .topnav a {
@@ -74,11 +72,11 @@ footer {
 
 #search-button {
   width: 65px;
-  padding-top: 25px;
+  padding-top: 8px;
   height: 65px;
   cursor: pointer;
   position: relative;
-  left: -20%; /* To center initially */
+  left: -21%; /* To center initially */
   transform: translateX(50%);
 }
 
@@ -374,8 +372,8 @@ footer {
 
 
 .aralin, .pagsusulit {
-  width: 400px;
-  height: 600px;
+  width: 350px;
+  height: 500px;
   margin: 20px;
   /* Add any additional styling for the container */
 }
@@ -393,10 +391,10 @@ footer {
 
 .gamebt{
   height: 70px;
-  width: 250px;
+  width: 200px;
   position: fixed;
   top: 14%;
-  margin-left: 220px;
+  margin-left: 195px;
   transform: translate(-50%, -50%);
 }
 
