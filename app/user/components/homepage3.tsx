@@ -4,7 +4,7 @@ import "../styles/homepage.css";
 import Navbar from './Navbar';
 import SideNav from './sidenav';
 
-export default function Home() {
+export default function homepage3() {
 
   const handleMenuClick = (menu: string) => {
 

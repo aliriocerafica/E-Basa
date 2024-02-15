@@ -1,6 +1,5 @@
 export const metadata = {
   title: 'E-Basa',
-  
 }
 
 export default function RootLayout({

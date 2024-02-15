@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import "../styles/homepage.css";
-import Navbar from '../components/Navbar';
-import SideNav from '../components/sidenav';
+import Navbar from './Navbar';
+import SideNav from './sidenav';
 
-export default function Home() {
+export default function homepage5() {
 
   const handleMenuClick = (menu: string) => {
 
