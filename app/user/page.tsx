@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <main>
       <div className="loginbot">
-        <Image src="/loginbot.png" alt="bot" width={1367} height={200} />
+        <Image src="/loginbot.png" alt="bot" layout="responsive" width={1367} height={200} />
       </div>
       <div className="loginbg">
         <div className="clouds overflow-hide">
-          <Image src="/clouds1.png" alt="Clouds" width={1500} height={350} />
+          <Image src="/clouds1.png" alt="Clouds" layout="responsive" width={1500} height={350} />
         </div>
         <Image
           src="/nav-logo.png"

@@ -17,7 +17,7 @@ export default function Home() {
       <SideNav />
     </div>
       <div className='home-carousel'>
-        <Link href="/homepage5">
+        <Link href="components/homepage5">
          
             <Image src='/prev.png' id='prev-image' width={130} height={200}  alt={''} />
          
@@ -30,7 +30,7 @@ export default function Home() {
           <Image src="/pagsusulit.png"  className='gamebt' id='pagsusulit-image' width={200} height={200} alt={''} />
           <Image src="/pagsusulit1.png" className="pagsusulit" alt="PagsusulitImage" width={1000} height={200} />
         </div>
-        <Link href="./homepage2">
+        <Link href="/homepage2">
          
             <Image src='/next.png' id='next-image'  width={130} height={200} alt={''} />
           

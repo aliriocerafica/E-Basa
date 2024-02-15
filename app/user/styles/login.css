@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/more-sugar');
+
 body {
   max-width: 100%;
   background-color: #4CB1E5;
@@ -82,7 +84,7 @@ input {
   box-sizing: border-box;
   color: #000000;
   border-radius: 50px;
-  font-family: "Happy School", sans-serif;
+  font-family: "More Sugar", sans-serif;
   font-weight: bold;
   font-size: 15px;
   letter-spacing: 2px;
