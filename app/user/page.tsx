@@ -39,8 +39,8 @@ export default function Home() {
         <Image src="/loginbot.png" alt="bot" layout="responsive" width={1367} height={200}/>
       </div>
       <div className='loginbg' >
-        <div className="clouds overflow-hide">
-          <Image src="/clouds1.png" alt="Clouds" layout="responsive" width={1500} height={350} />
+        <div className="clouds overflow-hide" >
+          <Image src="/clouds1.png" alt="Clouds"  width={2500} height={650} />
         </div>
         <Image
           src="/nav-logo.png"

@@ -2,14 +2,14 @@
 
 body {
   max-width: 100%;
-  background-color: #13DFFE;
+  background-color: #4CB1E5;
   font-family: 'More Sugar', sans-serif;
 }
 
 
   .centered-image {
       position: absolute;
-      top: 0;
+      top: 5%;
       left: 50%;
       transform: translateX(-50%);
   }
@@ -18,11 +18,11 @@ body {
         position: fixed;
         overflow: hidden;
         left: -1%;
-
+        
       }
   
       .clouds img {
-        animation: slidein 50s linear infinite; /* Adjust the duration as needed */
+        animation: slidein 75s linear infinite; /* Adjust the duration as needed */
         background-repeat: repeat;
       }
   
@@ -48,6 +48,7 @@ body {
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       font-family: 'More Sugar', sans-serif;
       font-weight: bold;
+      font-style: italic;
       font-size: 20px;
       letter-spacing: 3px;
   }
