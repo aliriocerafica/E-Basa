@@ -13,7 +13,7 @@
  
 }
 .student h1 {
-  font-family: "Inter ", sans-serif;
+
   background-color: white;
   height: 50px;
   font-size: 20px;
@@ -27,6 +27,7 @@
 }
 
 .student button {
+  font-family: "Inter ", sans-serif;
   background-color: #0cb0fa;
   margin-right: 10px;
   font-size: 15px;

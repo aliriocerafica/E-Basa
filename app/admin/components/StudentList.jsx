@@ -46,7 +46,7 @@ const StudentList = () => {
               <td className="px-6 py-4 whitespace-nowrap">k112</td>
               <td className="px-6 py-4 whitespace-nowrap">Jane Doe</td>
               <td className="buttonview">
-                <button>View</button>
+              <button>View</button>
               </td>
               <td className="buttonview">
                 <button>View</button>
@@ -195,6 +195,7 @@ const StudentList = () => {
               <td className="px-6 py-4 whitespace-nowrap">Jane Doe</td>
               <td className="buttonview">
                 <button>View</button>
+                
               </td>
               <td className="buttonview">
                 <button>View</button>
@@ -215,7 +216,7 @@ const StudentList = () => {
               <td className="px-6 py-4 whitespace-nowrap">k113</td>
               <td className="px-6 py-4 whitespace-nowrap">John Doe</td>
               <td className="buttonview">
-                <button>View</button>
+                <button data-modal-target="medium-modal" data-modal-toggle="medium-modal">View</button>
               </td>
               <td className="buttonview">
                 <button>View</button>
@@ -236,6 +237,10 @@ const StudentList = () => {
         </table>
       </div>
     </div>
+
+    
+    
+
     </div>
   );
 };
