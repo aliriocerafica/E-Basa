@@ -11,8 +11,10 @@ function LoginPage() {
   };
 
   return (
-    <div>
+    <div className="dash-bg bg-cover bg-center" style={{ backgroundImage: "url('/bg.png')" }}>
+    
       <RoleSelectionButtons role={role} onRoleChange={handleRoleChange} />
+
     </div>
   );
 }

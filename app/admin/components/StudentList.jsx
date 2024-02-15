@@ -3,14 +3,9 @@ import React from "react";
 import SideandtopNav from "./SideandtopNav"; // Import the SideNav component
 import "../css/studentlist.css";
 
-// Define the component
 const StudentList = () => {
   return (
     <div className="dash-bg">
-      {/* Render the SideNav component */}
-   
-  
-      {/* Render the table */}
       <div className="student">
         <h1 className="studenthead">
           Student List
@@ -19,10 +14,9 @@ const StudentList = () => {
             <img src="/add.png" alt="Add Student" />
           </button>
         </h1>
-    
       <div
         className="relatives overflow-x-auto sm:rounded-lg "
-        style={{ width: "1412px" }}
+        style={{ width: "1420px" }}
       >
         <table className="min-w-full divide-y divide-gray-200 text-center">
           <thead className="heads">

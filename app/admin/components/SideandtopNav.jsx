@@ -47,12 +47,18 @@ export function SideNav() {
     <div>
       <div className="flex flex-col sm:flex-row justify-between p-4 border-b border-blue-gray-200 top-nav" style={{ width: topNavWidth }}>
         <button className="text-blue-gray-600 focus:outline-none" onClick={toggleSidebar}>
-          <img src="/toggle.png" alt="Toggle Icon" className="h-8 w-8 ml-4" />
+          <img src="/toggle.png" alt="Toggle Icon" className="h-8 w-10 ml-4" />
         </button>
-        <input type="text" placeholder="Search..." className="search mb-4 sm:mb-0" />
+        <div className="relative">
+          <input type="text" placeholder="Search..." className="search text-black-400 " />
+          <div className="absolute inset-y-0 right-0 mb-4 float-right  pointer-events-none">
+            <img src="/search.png" alt="Search Icon" className="h-16 w-14 pb-[20px] mb-2 text-black-400" />
+          </div>
+        </div>
+
         <div className="flex items-center">
-          <span className="mr-2">John Doe Admin </span>
-          {/* <UserCircleIcon className="h-8 w-8 text-blue-gray-600" /> */}
+          <span className="mr--">John Doe Admin </span>
+          <img src="/user.png" alt="User" className="h-12 w-12 text-blue-gray-600" />
         </div>
       </div>
 

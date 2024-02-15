@@ -11,17 +11,11 @@
 }
 
 body {
-
   background-color: white;
 }
 
 /* Define a custom class for the background image */
-.bg-custom {
-  background-image: url('/bg.png');
-  /* Use absolute path */
-  background-size: cover;
-  background-position: center;
-}
+
 
 @layer utilities {
   .text-balance {
@@ -43,15 +37,14 @@ body {
 .submit-button {
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .custom-image {
   position: absolute;
-  top: -15%;
-  left: 0;
+  top: 22%;
+  left: 37%;
   height: auto;
   width: auto;
   transform: translateX(133%);
-  margin-top: 10px; /* Adjust margin top as needed */
+  margin-top: 10px;
 }
 
 /* Define a class for button text with text shadow */
