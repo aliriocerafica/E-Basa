@@ -5,7 +5,7 @@ import SideandtopNav from "../components/SideandtopNav"; // Import the SideNav c
 import StudentList from "../components/StudentList";
 import Dashboard from "../components/Dashboard";
 import AddStudent from "../components/AddStudent";
-import UserNav from "../components/UserNav";
+import UserNav from "../../user/components/UserNav";
 import Link from 'next/link';
 const page = () => {
   return (

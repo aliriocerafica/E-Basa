@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import "../styles/homepage.css";
-import Navbar from './Navbar';
-import SideNav from './sidenav';
+import "../../styles/homepage.css";
+import Navbar from '../../components/Navbar';
+import SideNav from '../../components/sidenav';
 
-export default function homepage5() {
+export default function homepage3() {
 
   const handleMenuClick = (menu: string) => {
 
@@ -17,7 +17,7 @@ export default function homepage5() {
       <SideNav />
     </div>
       <div className='home-carousel'>
-        <Link href="/homepage4">
+        <Link href="./secondpage">
          
             <Image src='/prev.png' id='prev-image' width={130} height={200}  alt={''} />
          
@@ -30,13 +30,13 @@ export default function homepage5() {
           <Image src="/pagsusulit.png"  className='gamebt' id='pagsusulit-image' width={200} height={200} alt={''} />
           <Image src="/pagsusulit2.png" className="pagsusulit" alt="PagsusulitImage" width={1000} height={200} />
         </div>
-        <Link href="/homepage1">
+        <Link href="./forthpage">
          
             <Image src='/next.png' id='next-image'  width={130} height={200} alt={''} />
           
         </Link>
       </div>
-      <Image src='/lvl5.png' id='level-image' width={1000} height={100} alt={''} />
+      <Image src='/lvl3.png' id='level-image' width={1000} height={100} alt={''} />
     </>
   );
 }
