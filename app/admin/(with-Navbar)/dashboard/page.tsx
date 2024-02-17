@@ -1,13 +1,13 @@
-"use client";
 import React from "react";
 import Name from "../../components/Name"; // Import the Name component
 import "../../css/dash.css";
-
+ 
 const Dashboard = () => {
    
  
   return (  
     <div className="dash-bg">
+          <title>Dashboard</title>
        < Name />
       <div className="header-act ml-[385px] w-[1380px]" >
         {" "}

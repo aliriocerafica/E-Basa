@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import "../../css/studentlist.css";
 import Link from 'next/link';
@@ -6,6 +5,7 @@ import Link from 'next/link';
 const StudentList = () => {
   return (
     <div className="dash-bg">
+      <title>List</title>
       <div className="student">
         <h1 className="studenthead">
           Student List
