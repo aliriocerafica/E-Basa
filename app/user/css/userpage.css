@@ -1,0 +1,11 @@
+.page-container {
+    background-image: url('/userbg.png'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+  
+  .content {
+    /* Add any additional styling for your content */
+  }
