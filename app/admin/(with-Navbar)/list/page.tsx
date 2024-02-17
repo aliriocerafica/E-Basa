@@ -1,28 +1,26 @@
 "use client";
 import React from "react";
-import SideandtopNav from "../components/SideandtopNav"; // Import the SideNav component
-import "../css/studentlist.css";
+import "../../css/studentlist.css";
+import Link from 'next/link';
+import Layout from "../../components/Layout";
 
-// Define the component
-const Page = () => {
+const StudentList = () => {
   return (
+    <Layout>
     <div className="dash-bg">
-      {/* Render the SideNav component */}
-      <SideandtopNav />
-  
-      {/* Render the table */}
       <div className="student">
         <h1 className="studenthead">
           Student List
+          <Link href="/admin/list/addStudent">
           <button className="float-right">
             Add Student Account
             <img src="/add.png" alt="Add Student" />
           </button>
+          </Link>
         </h1>
-    
       <div
         className="relatives overflow-x-auto sm:rounded-lg "
-        style={{ width: "1412px" }}
+        style={{ width: "1420px" }}
       >
         <table className="min-w-full divide-y divide-gray-200 text-center">
           <thead className="heads">
@@ -52,7 +50,7 @@ const Page = () => {
               <td className="px-6 py-4 whitespace-nowrap">k112</td>
               <td className="px-6 py-4 whitespace-nowrap">Jane Doe</td>
               <td className="buttonview">
-                <button>View</button>
+              <button>View</button>
               </td>
               <td className="buttonview">
                 <button>View</button>
@@ -201,6 +199,7 @@ const Page = () => {
               <td className="px-6 py-4 whitespace-nowrap">Jane Doe</td>
               <td className="buttonview">
                 <button>View</button>
+                
               </td>
               <td className="buttonview">
                 <button>View</button>
@@ -221,7 +220,7 @@ const Page = () => {
               <td className="px-6 py-4 whitespace-nowrap">k113</td>
               <td className="px-6 py-4 whitespace-nowrap">John Doe</td>
               <td className="buttonview">
-                <button>View</button>
+                <button data-modal-target="medium-modal" data-modal-toggle="medium-modal">View</button>
               </td>
               <td className="buttonview">
                 <button>View</button>
@@ -243,8 +242,9 @@ const Page = () => {
       </div>
     </div>
     </div>
+    </Layout>
   );
 };
 
 // Export the component
-export default Page;
+export default StudentList;

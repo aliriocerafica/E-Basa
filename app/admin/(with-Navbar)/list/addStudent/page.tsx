@@ -1,5 +1,8 @@
+//app\admin\list\addStudent\page.tsx
 "use client";
 import React from "react";
+import Layout from "../../../components/Layout";
+
 
 const AddStudent = () => {
   var loadFile = function (event) {
@@ -14,6 +17,8 @@ const AddStudent = () => {
     };
   };
   return (
+    <body>
+    <Layout>
     <div className="justify-center head pt-[120px]">
     <header className="bg-white ml-[565px] rounded-lg shadow-md p-4 w-[1090px] text-2xl">Add Student Account</header>
     <div className="flex justify-center items-center p-[20px]">
@@ -203,7 +208,8 @@ const AddStudent = () => {
     </div>
   
     </div>
-  
+    </Layout>
+    </body>
   );
 };
 

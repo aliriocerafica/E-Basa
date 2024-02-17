@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import Name from "./Name"; // Import the Name component
-import SideandtopNav from "./SideandtopNav"; // Import the SideNav component
-import "../css/dash.css";
+import Name from "../../components/Name"; // Import the Name component
+import "../../css/dash.css";
+import Layout from "../../components/Layout";
 
-const Page = () => {
+const Dashboard = () => {
    
  
-  return (
-    
+  return (  
+    <Layout>
     <div className="dash-bg">
        < Name />
       <div className="header-act ml-[385px] w-[1380px]" >
@@ -75,7 +75,8 @@ const Page = () => {
         </table>
       </div>
     </div>
+    </Layout>
   );
 };
 
-export default Page;
+export default Dashboard;
