@@ -1,7 +1,7 @@
 //app\admin\list\addStudent\page.tsx
-'use client'
+"use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
- 
+
 interface FormData {
   username: string;
   user_type: string;
@@ -71,7 +71,6 @@ const AddStudent: React.FC = () => {
 
   return (
       <div className="justify-center head pt-[120px]">
-        <title>Add</title>
         <header className="bg-white ml-[565px] rounded-lg shadow-md p-4 w-[1090px] text-2xl">Add Student Account</header>
         {errorMessage && (
           <div className="flex items-center bg-red-500 text-white text-sm font-bold px-4 py-3" role="alert" key="error-message">
