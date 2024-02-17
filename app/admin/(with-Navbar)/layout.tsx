@@ -1,7 +1,7 @@
-// components/Layout.tsx
+'use client';
 
 import React from 'react';
-import NavigationBar from './NavigationBar';
+import NavigationBar from '../components/NavigationBar';
 
 interface LayoutProps {
   children: React.ReactNode;

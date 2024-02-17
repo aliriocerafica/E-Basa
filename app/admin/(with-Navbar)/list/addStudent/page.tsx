@@ -1,26 +1,91 @@
 //app\admin\list\addStudent\page.tsx
 "use client";
-import React from "react";
-import Layout from "../../../components/Layout";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 
+interface FormData {
+  username: string;
+  user_type: string;
+  firstname: string;
+  lastname: string;
+  middle_initial: string;
+  age: string;
+  email: string;
+  gender: string;
+  school: string;
+  schoolid: string;
+  password: string;
+  confirmPassword: string;
+}
 
-const AddStudent = () => {
-  var loadFile = function (event) {
-    var input = event.target;
-    var file = input.files[0];
-    var type = file.type;
-    var output = document.getElementById("preview_img");
+const AddStudent: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    username: "",
+    user_type: "Student",
+    firstname: "",
+    lastname: "",
+    middle_initial: "",
+    age: "",
+    email: "",
+    gender: "Male",
+    school: "",
+    schoolid: "",
+    password: "",
+    confirmPassword: ""
+  });
 
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function () {
-      URL.revokeObjectURL(output.src); // free memory
-    };
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [sucessMessage, setSucessMessage] = useState<string>("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      setErrorMessage("Passwords do not match");
+      console.error("Passwords do not match");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:8000/register/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      console.log("Registration successful");
+      setSucessMessage("Registration successful");
+    } catch (error) {
+      console.error("Error registering user:", error);
+      setErrorMessage("Error registering user");
+    }
+  };
+
   return (
-    <body>
-    <Layout>
-    <div className="justify-center head pt-[120px]">
-    <header className="bg-white ml-[565px] rounded-lg shadow-md p-4 w-[1090px] text-2xl">Add Student Account</header>
+      <div className="justify-center head pt-[120px]">
+        <header className="bg-white ml-[565px] rounded-lg shadow-md p-4 w-[1090px] text-2xl">Add Student Account</header>
+        {errorMessage && (
+          <div className="flex items-center bg-red-500 text-white text-sm font-bold px-4 py-3" role="alert" key="error-message">
+            <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
+            <p>{errorMessage}</p>
+          </div>
+        )}
+
+        {sucessMessage && (
+          <div className="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert" key="error-message">
+            <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
+            <p>{sucessMessage}</p>
+          </div>
+        )}
+
     <div className="flex justify-center items-center p-[20px]">
     <div className="bg-white rounded-lg bg-opacity-50">
 
@@ -38,7 +103,7 @@ const AddStudent = () => {
               <span className="sr-only">Choose profile photo</span>
               <input
                 type="file"
-                onChange={loadFile}
+                // onChange={loadFile}
                 className="block w-full text-sm shadow-md rounded-full text-black-500
                 file:mr-4 file:py-2 file:px-4
                 file:rounded-full file:border-0
@@ -51,22 +116,23 @@ const AddStudent = () => {
 
           {/* Right column */}
           <div className="bg-white bg-opacity-0  p-4 rounded-lg ">
-            <form className="w-full max-w-lg">
-       
+            <form className="w-full max-w-lg" onSubmit={handleSubmit}>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/1 px-3 mb-6 md:mb-0">
+                  
                   <label
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     htmlFor="grid-first-name"
                   >
                     First Name
                   </label>
-
                   <input
                     className=" shadow-md appearance-none block w-full bg-white text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="grid-first-name"
                     type="text"
-                    placeholder="Jane"
+                    name="firstname"
+                    placeholder="Firstname"
+                    value={formData.firstname}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full md:w-1/1 px-3 ">
@@ -77,10 +143,12 @@ const AddStudent = () => {
                     Last Name
                   </label>
                   <input
-                    className="shadow-md appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-last-name"
+                    className=" shadow-md appearance-none block w-full bg-white text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     type="text"
-                    placeholder="Doe"
+                    name="lastname"
+                    placeholder="Lastname"
+                    value={formData.lastname}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-3 pt-3">
@@ -91,10 +159,12 @@ const AddStudent = () => {
                     Middle Initial
                   </label>
                   <input
-                    className="shadow-md appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-M-name"
+                    className=" shadow-md appearance-none block w-full bg-white text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     type="text"
-                    placeholder="M"
+                    name="middle_initial"
+                    placeholder="M.I"
+                    value={formData.middle_initial}
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -105,10 +175,12 @@ const AddStudent = () => {
                     Age
                   </label>
                   <input
-                    className="shadow-md appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-age"
-                    type="text "
-                    placeholder="Enter age"
+                    className=" shadow-md appearance-none block w-full bg-white text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    type="number"
+                    name="age"
+                    placeholder="0"
+                    value={formData.age}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-3 pt-3">
@@ -119,10 +191,12 @@ const AddStudent = () => {
                     Email
                   </label>
                   <input
-                    className="shadow-md appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-email"
+                    className=" shadow-md appearance-none block w-full bg-white text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     type="email"
-                    placeholder="Enter email"
+                    name="email"
+                    placeholder="a@a.com"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-3 pt-3">
@@ -134,7 +208,10 @@ const AddStudent = () => {
                   </label>
                   <select
                     className="block shadow-md appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-gender"
+                    id="gender"
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleChange}
                   >
                     <option>Male</option>
                     <option>Female</option>
@@ -148,10 +225,12 @@ const AddStudent = () => {
                     School
                   </label>
                   <input
-                    className="appearance-none  shadow-md block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-school"
+                    className=" shadow-md appearance-none block w-full bg-white text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     type="text"
-                    placeholder="Enter school name"
+                    name="school"
+                    placeholder="University of Makati"
+                    value={formData.school}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-3 pt-3">
@@ -163,9 +242,11 @@ const AddStudent = () => {
                   </label>
                   <input
                     className="appearance-none  shadow-md block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-school-id"
                     type="text"
+                    name="schoolid"
                     placeholder="Enter school ID"
+                    value={formData.schoolid}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-3 pt-3">
@@ -177,9 +258,11 @@ const AddStudent = () => {
                   </label>
                   <input
                     className="appearance-none  shadow-md block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-password"
+                    name="password"
                     type="password"
                     placeholder="Enter password"
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-3 pt-3">
@@ -191,13 +274,16 @@ const AddStudent = () => {
                   </label>
                   <input
                     className="appearance-none  shadow-md block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    name="confirmPassword"
                     id="grid-confirm-password"
                     type="password"
                     placeholder="Confirm password"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
-              <button class="bg-[#6FD03D] hover:bg-blue-700   shadow-md text-white font-bold py-2 px-4 rounded-[10px] pr-[100px] pl-[100px]">
+              <button className="bg-[#6FD03D] hover:bg-blue-700   shadow-md text-white font-bold py-2 px-4 rounded-[10px] pr-[100px] pl-[100px]">
                 Create Student Account
               </button>
               {/* Additional form fields go here */}
@@ -206,10 +292,7 @@ const AddStudent = () => {
         </div>
       </div>
     </div>
-  
     </div>
-    </Layout>
-    </body>
   );
 };
 

@@ -2,11 +2,9 @@
 import React from "react";
 import "../../css/studentlist.css";
 import Link from 'next/link';
-import Layout from "../../components/Layout";
 
 const StudentList = () => {
   return (
-    <Layout>
     <div className="dash-bg">
       <div className="student">
         <h1 className="studenthead">
@@ -242,7 +240,6 @@ const StudentList = () => {
       </div>
     </div>
     </div>
-    </Layout>
   );
 };
 
