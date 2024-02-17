@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoginAdmin from "./LoginAdmin";
 import LoginEducator from "./LoginEducator";
 
@@ -9,8 +9,13 @@ interface RoleSelectionButtonsProps {
 }
 
 const RoleSelectionButtons: React.FC<RoleSelectionButtonsProps> = ({ role, onRoleChange }) => {
-  const [showLoginAdmin, setShowLoginAdmin] = useState(false);
+  const [showLoginAdmin, setShowLoginAdmin] = useState(true); // Set admin as default
   const [showLoginEducator, setShowLoginEducator] = useState(false);
+
+  useEffect(() => {
+    // Call onRoleChange with the default role when component mounts
+    onRoleChange('admin');
+  }, []); // Empty dependency array ensures this effect runs only once after the initial render
 
   const handleClick1 = () => {
     setShowLoginAdmin(false); // Reset the state of LoginAdmin
