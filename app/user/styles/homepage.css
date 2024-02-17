@@ -38,6 +38,11 @@ footer {
         .topnav {
   overflow: hidden;
   position: fixed;
+  left: 20%;
+  transform: translate(-50);  
+  background-color: white;
+  border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .topnav a {

@@ -17,7 +17,7 @@ export default function homepage() {
       <SideNav />
     </div>
       <div className='home-carousel'>
-        <Link href="../../components/homepage5">
+        <Link href="./pages/fifthpage">
          
             <Image src='/prev.png' id='prev-image' width={130} height={200}  alt={''} />
          

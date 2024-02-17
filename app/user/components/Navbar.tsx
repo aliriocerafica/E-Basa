@@ -14,13 +14,9 @@ const Navbar = () => {
         
         </Link>
 
-        <Link href="/Ranks">
-       
-            <Image src="/trophy.png" alt="trophy" id="trophy-image" width={160} height={100} />
-        
-        </Link>
+      
 
-        <Link href="/home">
+        <Link href="">
           
             <div className="user-search-container">
               <div className="search-bar">
@@ -29,6 +25,12 @@ const Navbar = () => {
               </div>
             </div>
         </Link>
+
+        <Link href="/Ranks">
+       
+       <Image src="/trophy.png" alt="trophy" id="trophy-image" width={160} height={100} />
+   
+   </Link>
 
         <Link href="/profile">
          
