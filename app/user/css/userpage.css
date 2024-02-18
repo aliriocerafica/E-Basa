@@ -1,11 +1,70 @@
 .page-container {
-    background-image: url('/userbg.png'); /* Replace with the actual path to your image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+  background-image: url('/userbg2.png'); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+}
+
+.section1,
+.section2 {
+  background-color: white;
+  padding: 20px;
+  margin: 10px; /* Adjust as needed for spacing between sections */
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.section-image {
+  height: 500px;
+  width: 400px; /* Adjust as needed */
+  float: center;
+}
+
+.image-button {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.section-header {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
   }
-  
-  .content {
-    /* Add any additional styling for your content */
+
+  .section1,
+  .section2 {
+    margin-left: 0;
+    margin-top: 10px; /* Adjust as needed */
+    width: auto;
   }
+
+  .image-button {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-top: 10px; /* Adjust as needed */
+  }
+}
