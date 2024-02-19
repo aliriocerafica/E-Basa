@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import Link from 'next/link';
 
 ChartJS.register(
   CategoryScale,
@@ -109,7 +110,7 @@ const CustomBarChart = () => {
   return (
     <div className='relative custom-font'>
         
-        <div className='info'>
+        <div className='responsive info'>
   <div>
     <a style={{ fontSize: '26px' }}><b>Pangalan:</b> Jane Doe</a>
     <a style={{ marginLeft: '45px', fontSize: '26px' }}><b>Edad:</b> 78</a>
@@ -122,15 +123,11 @@ const CustomBarChart = () => {
    <p style={{ fontSize: '70px', color: verdict === 'Need Improvement' ? 'yellow' : (verdict === 'Pass' ? 'green' : 'red') }}>{verdict} {totalGrade}%</p>
 </div>
 
-     <div className='w-[70] md:col-span-1 lg:h-[40vh] h-[20vh]  p-2 '>
+     <div className='w-[80] md:col-span-1 lg:h-[40vh] h-[20vh]  p-2 '>
         <Bar data={chartData} options={chartOptions} />
       </div>
       <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <div className="flex justify-center absolute bottom-0 w-full pb-4 ">
+      <div className=" flex justify-center bottom-0 w-full pb-4 ">
   <div className="text-center mr-4">
     <div className="box bg-red-500 rounded-lg p-2"></div>
     <span>Beginning</span>
@@ -152,6 +149,13 @@ const CustomBarChart = () => {
     <span>Advanced</span>
   </div>
 </div>
+<br/>
+<div style={{ textAlign: 'center', marginBottom: '25px' }}>
+  <Link href='' className='dlbutton'>
+  Download Summary
+  </Link>
+</div>
+
 </div>
 
    
