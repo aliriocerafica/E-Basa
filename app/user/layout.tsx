@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import localfont from "next/font/local";
 import "./globals.css";
 
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 const harmattan = localfont ({
@@ -26,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={harmattan.className}>{children}</body>
+      <body 
+      className={harmattan.className}>
+        
+          {children}</body>
     </html>
   );
 }
