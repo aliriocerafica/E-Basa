@@ -51,7 +51,9 @@ const StudentList = () => {
               <button>View</button>
               </td>
               <td className="buttonview">
+                <Link href="/admin/list/TestScores">
                 <button>View</button>
+                </Link>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
               <td className="text center">St. Theodore</td>
