@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import React, { useState } from "react";
 
 const UserNav = () => {
@@ -10,7 +9,7 @@ const UserNav = () => {
   };
 
   return (
-    <nav className="bg-[#FFFFFF] dark:bg-gray-900 fixed z-20 top-0 left-0  h-[65px] right-0 mx-auto rounded-br-[20px] rounded-bl-[20px] shadow-md w-[70%] border-b border-gray-200 dark:border-gray-600 font-sans">
+    <nav className="bg-[#FFFFFF] dark:bg-gray-900 fixed z-20 top-0 left-0 h-[65px] right-0 mx-auto rounded-br-[20px] rounded-bl-[20px] shadow-md w-[70%] border-b border-gray-200 dark:border-gray-600 font-sans">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a
           href="https://flowbite.com/"
@@ -22,12 +21,16 @@ const UserNav = () => {
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
-            class="text-gray-900 bg-[#A1E67D] rounded-br-[25px] shadow-md  rounded-tr-[10px]  rounded-tl-[10px]
+            className="text-gray-900 bg-[#A1E67D] rounded-br-[25px] shadow-md rounded-tr-[10px] rounded-tl-[10px]
         w-[100px] rounded-bl-[25px] mr-[24px] from-lime-200 via-lime-400 to-lime-500 
         hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium 
        text-sm px-5 py-2 text-center me-2 mb-2"
           >
-            <img src="/rank.png" alt="Lime" class="w-full h-12 object-cover" />
+            <img
+              src="/rank.png"
+              alt="Lime"
+              className="w-full h-full object-cover"
+            />
           </button>
 
           <a href="YOUR_BUTTON_URL_HERE">
@@ -70,7 +73,7 @@ const UserNav = () => {
         >
           <input
             type="search"
-            class="relative block min-w-0 flex-auto shadow-md border-none  rounded-tl-[20px] rounded-bl-[20px]
+            className="relative block min-w-0 flex-auto shadow-md border-none rounded-tl-[20px] rounded-bl-[20px]
       w-[420px] h-[40px]
       bg-[#CFF9FF] bg-clip-padding 
       px-3 py-[0.25rem] text-base font-normal
@@ -83,7 +86,7 @@ const UserNav = () => {
           />
 
           <button
-            class="relative z-[2] flex items-center px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white h-[42px]
+            className="relative z-[2] flex items-center px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white h-[42px]
       shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg rounded-br-[15px] rounded-tr-[15px] bg-[#18C7E1]
       focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
             type="button"
@@ -95,12 +98,12 @@ const UserNav = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              class="h-5 w-5"
+              className="h-5 w-5"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </button>
