@@ -3,8 +3,8 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
 interface FormData {
-  username: string;
   user_type: string;
+  test: string;
   firstname: string;
   lastname: string;
   middle_initial: string;
@@ -12,15 +12,15 @@ interface FormData {
   email: string;
   gender: string;
   school: string;
-  schoolid: string;
+  username: string;
   password: string;
   confirmPassword: string;
 }
 
 const AddStudent: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    username: "",
     user_type: "Student",
+    test: "0",
     firstname: "",
     lastname: "",
     middle_initial: "",
@@ -28,7 +28,7 @@ const AddStudent: React.FC = () => {
     email: "",
     gender: "Male",
     school: "",
-    schoolid: "",
+    username: "",
     password: "",
     confirmPassword: ""
   });
@@ -71,7 +71,10 @@ const AddStudent: React.FC = () => {
 
   return (
       <div className="justify-center head pt-[120px]">
-        <header className="bg-white ml-[565px] rounded-lg shadow-md p-4 w-[1090px] text-2xl">Add Student Account</header>
+        <header className="bg-white ml-[565px] rounded-lg shadow-md p-4 w-[1090px] text-2xl">
+          <title>Add Student</title>
+          Add Student Account
+        </header>
         {errorMessage && (
           <div className="flex items-center bg-red-500 text-white text-sm font-bold px-4 py-3" role="alert" key="error-message">
             <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
@@ -243,9 +246,9 @@ const AddStudent: React.FC = () => {
                   <input
                     className="appearance-none  shadow-md block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
-                    name="schoolid"
+                    name="username"
                     placeholder="Enter school ID"
-                    value={formData.schoolid}
+                    value={formData.username}
                     onChange={handleChange}
                   />
                 </div>
