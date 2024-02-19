@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import UserNav from "../components/UserNav";
-import "../css/userpage.css"; // Corrected import statement
+import "../../css/userpage.css"; // Corrected import statement
 
 const Page = () => {
   return (
