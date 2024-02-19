@@ -1,0 +1,123 @@
+.dash-bg {
+    background-image: url("/bgad.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* This will make the background cover the entire viewport */
+  }
+  
+  .student-test {
+    margin-left: 300px;
+    padding: 100px;
+    font-weight: bold;
+   
+  }
+  .student-test h1 {
+  
+    background-color: white;
+    height: 50px;
+    font-size: 20px;
+    padding-top: 8px;
+    border-radius: 10px;
+    padding-left: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .float-right {
+    float: right; /* Float the button to the left */
+  }
+  
+  .student-test button {
+    font-family: "Inter ", sans-serif;
+    background-color: #0cb0fa;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 8px;
+    padding-left: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  
+  .student-test button:hover {
+    background-color: #4dc7ff; /* Change background color on hover */
+  }
+  .student-test button img {
+    height: 25px;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .heads {
+    background-color: white;
+    color: black;
+    font-family: "Inter", sans-serif;
+  }
+  .uppercase {
+    text-transform: none;
+  }
+  .header-act {
+    font-size: 24px;
+    font-weight: bold;
+    max-width: 100%; /* Set the maximum width to 100% */
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  .bod {
+    font-family: "Harmattan", sans-serif;
+  }
+  .bod {
+    border-top: 1px solid black; /* Add a 2px solid black border to the top of the tr */
+  }
+  
+  /* Optional: Adjust padding for better spacing */ 
+  .bod td {
+    padding: 10px 6px;
+  }
+  .relatives{
+    margin-top: 10px;
+  }
+  .buttonview button {
+    background-color: #49F6FF;
+    width: 90px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.2); /* Add drop shadow and inner shadow effects */
+  }
+  
+  .student-test .editbutton button img{
+  
+   margin-right: 3px;
+   
+  
+  }
+  .student-test .editbutton button{
+    width: 40px;
+  }
+
+  .box {
+    width: 70px; /* Adjust width as needed */
+    height: 70px; /* Adjust height as needed */
+  }
+  
+  .custom-font {
+    font-family: 'Lato', sans-serif;
+    
+  }
+
+  p, h2{
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .dlbutton{
+    font-family: 'lato', sans-serif;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5), inset 0px 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 20px 65px; /* Adjusted padding for a slightly bigger button */
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
