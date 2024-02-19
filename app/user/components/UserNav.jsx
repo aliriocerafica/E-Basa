@@ -9,11 +9,8 @@ const UserNav = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <nav className="bg-[#FFFFFF] dark:bg-white-900 fixed z-20 top-0 left-0  h-[65px] right-0 mx-auto rounded-br-[20px] rounded-bl-[20px] shadow-md w-[70%] border-b border-gray-200 font-sans">
-=======
+
     <nav className="bg-[#FFFFFF] dark:bg-gray-900 fixed z-20 top-0 left-0 h-[65px] right-0 mx-auto rounded-br-[20px] rounded-bl-[20px] shadow-md w-[70%] border-b border-gray-200 dark:border-gray-600 font-sans">
->>>>>>> 6f7f1f02d01f46787be5730e0fe06d1617763511
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a
           href="https://flowbite.com/"
