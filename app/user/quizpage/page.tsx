@@ -8,7 +8,7 @@ const page = () => {
   
     <div className='page-container'>
       
-        <QuizPage2 />
+        <QuizPage1 />
         </div>
   )
 }

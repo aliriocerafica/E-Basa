@@ -7,7 +7,7 @@ const handleChoiceClick = (choice) => {
 
 const QuizPage1 = () => {
   return (
-    <div className="page-container">
+    <div className="page-container flex flex-wrap">
         <div>
       <button className=" text-white font-bold py-2 px-4 rounded responsive ">
         <img src="/back2.png" alt="Image Alt Text" className="h-[260px]  w-[80px] inline mr-6" />
