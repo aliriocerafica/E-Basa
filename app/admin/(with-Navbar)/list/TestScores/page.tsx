@@ -1,12 +1,16 @@
 "use client";
-
 import React, { useState } from 'react';
 import "../../../css/testscores.css";
-import BarGraph from '../../../components/barchart';
+import RoleSelectionButtons from '../../../components/Testrole';
 
 
-const TestScores = () => {
- 
+const TestScores: React.FC = () => {
+  const [role, setRole] = useState(''); // Assuming you manage role state in LoginPage
+
+  // Define a function to handle role change
+  const handleRoleChange = (newRole: string) => {
+    setRole(newRole);
+  };
 
   return (
     <>
@@ -21,7 +25,9 @@ const TestScores = () => {
         </h1>
         <br/>
         <div className='rounded-lg bg-white p-4'>
-      <BarGraph/> 
+        <RoleSelectionButtons role={role} onRoleChange={handleRoleChange} />
+
+    
     </div>
 
     </div>
