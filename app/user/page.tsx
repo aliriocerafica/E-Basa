@@ -26,6 +26,7 @@ export default function LoginPage() {
     e.preventDefault(); // Prevent default form submission behavior
     try {
       localStorage.removeItem('access_token');
+      localStorage.removeItem('user_id');
       const response = await fetch('http://localhost:8000/login/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -37,6 +38,7 @@ export default function LoginPage() {
       }
       const data = await response.json();
       localStorage.setItem('access_token', data.access_token);
+      localStorage.setItem('user_id', data.user_id);
 
       console.log("Login successful", data);
 

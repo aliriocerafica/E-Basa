@@ -4,7 +4,8 @@ import UserNav from '../../components/UserNav'; // Adjust the path as needed
 import "../../css/userpage.css";
 
 export default function Home() {
-
+  console.log(localStorage.getItem('access_token'));
+  console.log(localStorage.getItem('user_id'));
   return (
     <div className="page-container">
       <UserNav />
