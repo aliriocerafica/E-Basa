@@ -50,6 +50,6 @@ const RoleSelectionButtons: React.FC<RoleSelectionButtonsProps> = ({ role, onRol
   {showPosttest && <Posttest/>}
 </div>
 
-  );
+);
 };
 export default RoleSelectionButtons;

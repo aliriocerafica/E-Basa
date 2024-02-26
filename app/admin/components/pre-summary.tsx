@@ -39,7 +39,7 @@ const CustomBarChart = () => {
   const [totalGrade, setTotalGrade] = useState(0);
 
   useEffect(() => {
-    const grades = [32, 31, 15, 23];
+    const grades = [32, 31, 15, 90];
     const total = grades.reduce((acc, curr) => acc + curr, 0);
     const adjustedTotal = total > 100 ? 100 : total;
 
