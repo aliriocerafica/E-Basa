@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import "../css/quiz.css"; // Corrected import statement
+import "../../css/quiz.css";
+import Link from 'next/link';
 
 const page = () => {
   return (

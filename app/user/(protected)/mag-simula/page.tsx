@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
-import "../../css/userpage.css"; // Corrected import statement
+import "../../css/userpage.css";
+import Link from "next/link";
+
 
 const Page = () => {
   return (
@@ -29,6 +31,7 @@ const Page = () => {
             unang pagsusulit."
           </p>
           <div className="flex justify-center">
+            <Link href="/user/mga-paksa">
             <button className="button-container">
               <img
                 src="/Magsimula.png"
@@ -36,6 +39,7 @@ const Page = () => {
                 className="button-image h-[80px] mt-[40px] "
               />
             </button>
+            </Link>
           </div>
         </div>
       </div>
