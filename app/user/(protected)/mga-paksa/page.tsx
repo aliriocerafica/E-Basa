@@ -19,9 +19,11 @@ const page = () => {
             />
 
             <div className="button2">
+            <Link href="/user/pre-test/hugis">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px] mb-2 mt-2 rounded-lg hover:bg-[#1A2CA0] text-white">
                 Hugis
               </button>
+            </Link>
             </div>
           </div>
 
@@ -32,9 +34,11 @@ const page = () => {
               className="h-[170px] w-[160px]"
             />
             <div className="button2">
+            <Link href="/user/pre-test/kulay">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px] mb-2 mt-2 rounded-lg hover:bg-[#1A2CA0] text-white">
                Kulay
               </button>
+            </Link>
             </div>
           </div>
           <div className="hugis  pt-8 rounded-lg bg-[#41545B] h-[221px]  border-4 border-[#BF977B]  md:h-auto w-[249px] md:w-auto text-center flex flex-col justify-between items-center">
@@ -44,9 +48,11 @@ const page = () => {
               className="h-[170px] w-[160px]"
             />
             <div className="button2">
+            <Link href="/user/pre-test/numero">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px]   mb-2 mt-2 rounded-lg hover:bg-[#1A2CA0] text-white">
                 Numero
               </button>
+            </Link>   
             </div>
           </div>
           <div className="hugis  pt-8 rounded-lg bg-[#41545B] h-[221px] md:h-auto w-[249px] md:w-auto border-4 border-[#BF977B]  text-center flex flex-col justify-between items-center">
@@ -56,9 +62,11 @@ const page = () => {
               className="h-[170px] w-[160px]"
             />
             <div className="button2">
+            <Link href="/user/pre-test/numero">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px] mb-2 mt-2  rounded-lg hover:bg-[#1A2CA0] text-white">
                 Pag unawa sa Napakingan
               </button>
+            </Link>
             </div>
           </div>
           <div className="hugis pt-8  rounded-lg bg-[#41545B] h-[221px] md:h-auto w-[249px]  border-4 border-[#BF977B] md:w-auto text-center flex flex-col justify-between items-center">
@@ -68,9 +76,11 @@ const page = () => {
               className="h-[170px] w-[160px]"
             />
             <div className="button2">
+            <Link href="/user/pre-test/numero">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px] mb-2 mt-2 rounded-lg  hover:bg-[#1A2CA0] text-white">
                Wika at Gramatika
               </button>
+            </Link>
             </div>
           </div>
           <div className="hugis  pt-8 rounded-lg bg-[#41545B] h-[221px] md:h-auto w-[249px] md:w-auto text-center border-4 border-[#BF977B]  flex flex-col justify-between items-center">
@@ -80,9 +90,11 @@ const page = () => {
               className="h-[170px] w-[160px]"
             />
             <div className="button2">
+            <Link href="/user/pre-test/numero">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px] mb-2 mt-2 rounded-lg hover:bg-[#1A2CA0] text-white">
                 Pag Unawa sa Binasa
               </button>
+            </Link>
             </div>
           </div>
           <div className="hugis  pt-8 rounded-lg bg-[#41545B] h-[221px] md:h-auto w-[249px]  border-4 border-[#BF977B]  md:w-auto text-center flex flex-col justify-between items-center">
@@ -92,9 +104,11 @@ const page = () => {
               className="h-[170px] w-[160px]"
             />
             <div className="button2">
+            <Link href="/user/pre-test/numero">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px] mb-2 mt-2 rounded-lg hover:bg-[#1A2CA0] text-white">
                 Talasalitaan
               </button>
+            </Link>
             </div>
           </div>
           <div className="hugis  pt-8 rounded-lg bg-[#41545B] h-[221px] md:h-auto w-[249px] md:w-auto  border-4 border-[#BF977B] text-center flex flex-col justify-between items-center">
@@ -104,9 +118,11 @@ const page = () => {
               className="h-[160px] w-[160px]"
             />
             <div className="button2">
+            <Link href="/user/pre-test/numero">
               <button className="Go bg-[#00abff] h-10 w-[240px] text-[20px] mb-2 mt-2 rounded-lg hover:bg-[#1A2CA0] text-white">
                 Ponolohiya
               </button>
+            </Link>
             </div>
           </div>
         </div>
