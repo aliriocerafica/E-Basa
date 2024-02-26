@@ -1,6 +1,7 @@
 "use client";
 import "../../css/quiz.css"; // Corrected import statement
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface Question {
   id: number;
@@ -16,6 +17,7 @@ interface Result {
 }
 
 const HugisPage = () => {
+  const router = useRouter();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
@@ -42,6 +44,7 @@ const HugisPage = () => {
   const handleOptionChange = (optionIndex: number) => {
     setSelectedOption(optionIndex);
     updateScore(optionIndex);
+    handleNextQuestion(); // Automatically proceed to the next question
   };
 
   const updateScore = (optionIndex: number) => {
@@ -51,8 +54,14 @@ const HugisPage = () => {
   };
 
   const handleNextQuestion = () => {
-    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-    setSelectedOption(null);
+    setTimeout(() => { // Delay to allow state updates before proceeding
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+        setSelectedOption(null); // Reset selected option for the next question
+      } else {
+        sendResult(); // Submit result when all questions are answered
+      }
+    }, 500); // Adjust delay as needed
   };
 
   const sendResult = async () => {
@@ -78,6 +87,7 @@ const HugisPage = () => {
         });
         if (response.ok) {
           console.log('Pre-test result added successfully');
+          router.push('/user/mga-paksa');
         } else {
           throw new Error('Failed to add posttest result');
         }
@@ -98,38 +108,21 @@ const HugisPage = () => {
           <p className="text-[40px] text-white text-center">{questions[currentQuestionIndex].question_text}</p>
 
           <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px]">
-          
-          {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-        <li key={optionIndex} className={`choice-${optionIndex + 1} shadow-md mt-20 bg-[#798BFF] h-[240px] w-[240px]  rounded-lg  flex items-center justify-center text-center mb-4 hover:bg-blue-500 hover:text-white`}>
-          <input
-            type="radio"
-            id={`option${optionIndex}`}
-            name="options"
-            value={optionIndex}
-            checked={selectedOption === optionIndex}
-            onChange={() => handleOptionChange(optionIndex)}
-          />
-          <label htmlFor={`option${optionIndex}`} className="ml-2">{option}</label>
-        </li>
-      ))}
-        
+            {questions[currentQuestionIndex].options.map((option, optionIndex) => (
+              <li 
+                key={optionIndex} 
+                className={`choice-${optionIndex} shadow-md mt-20 rounded-lg flex items-center justify-center text-center mb-4 hover:bg-blue-500 hover:text-white`} 
+                onClick={() => handleOptionChange(optionIndex)}
+                style={{ backgroundColor: optionIndex === 0 ? '#FFD700' :
+                        optionIndex === 1 ? '#FF0000' :
+                        optionIndex === 2 ? '#0000FF' :
+                        optionIndex === 3 ? '#008000' : ''
+                }}
+              >
+                {option}
+              </li>
+            ))}
           </ul>
-          
-          <div className="flex justify-between mb-4">
-            <button
-              className="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none"
-              onClick={() => {
-                if (currentQuestionIndex === questions.length - 1 && selectedOption !== null) {
-                  sendResult();
-                } else {
-                  handleNextQuestion();
-                }
-              }}
-            >
-              {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
-            </button>
-            {/* <p className="text-black">Total Score: {totalScore}/{questions.length}</p> */}
-          </div>
         </div>
       )}
     </div>
