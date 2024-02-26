@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import "../../css/quiz.css"; // Corrected import statement
+import "../../../css/quiz.css";
 
 interface Question {
   id: number;
@@ -16,7 +16,7 @@ interface Result {
   date_taken: string;
 }
 
-const HugisPage = () => {
+const Kulay = () => {
   const router = useRouter();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -27,7 +27,7 @@ const HugisPage = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch("http://localhost:8000/hugis/");
+        const response = await fetch("http://localhost:8000/kulay/");
         if (response.ok) {
           const data = await response.json();
           setQuestions(data);
@@ -82,7 +82,7 @@ const HugisPage = () => {
     if (user_id && access_token) {
       const date_taken = new Date().toISOString();
       const result: Result = {
-        exam_name: "Hugis",
+        exam_name: "Kulay",
         score: totalScore,
         date_taken: date_taken,
       };
@@ -164,5 +164,5 @@ const HugisPage = () => {
   );
 };
 
-export default HugisPage;
+export default Kulay;
 
