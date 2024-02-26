@@ -1,7 +1,7 @@
-"use client";
+'use client'
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import "../../css/quiz.css"; // Corrected import statement
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 interface Question {
   id: number;
@@ -114,34 +114,55 @@ const HugisPage = () => {
   };
 
   return (
-    <div className="page-container justify-center flex flex-wrap">
-    <div className="">
-      {questions.length > 0 && (
-        <div className="w-[1400px] h-[700px] p-2 bg-[#20683C] border-8 border-[#BF977B] rounded-lg">
-          <h2 className=" text-center font-semibold mb-2 text-[40px] text-[#FF8484]">Panuto {currentQuestionIndex + 1}</h2>
-          <p className="text-[40px] text-white text-center">{questions[currentQuestionIndex].question_text}</p>
+    <div className="page-container flex flex-wrap">
+      <div className="">
+        {questions.length > 0 && (
+          <div className="w-[1400px] h-[700px] p-2 bg-[#20683C] border-8 border-[#BF977B] rounded-lg">
+            <h2 className="text-center font-semibold mb-2 text-[40px] text-[#FF8484]">
+              Panuto {currentQuestionIndex + 1}
+            </h2>
+            <p className="text-[40px] text-white text-center">
+              {questions[currentQuestionIndex].question_text}
+            </p>
 
-          <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px]">
-            {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-              <li 
-                key={optionIndex} 
-                className={`choice-${optionIndex} shadow-md mt-20 rounded-lg flex items-center justify-center text-center mb-4 hover:bg-blue-500 hover:text-white`} 
-                onClick={() => handleOptionChange(optionIndex)}
-                style={{ backgroundColor: optionIndex === 0 ? '#FFD700' :
-                        optionIndex === 1 ? '#FF0000' :
-                        optionIndex === 2 ? '#0000FF' :
-                        optionIndex === 3 ? '#008000' : ''
-                }}
-              >
-                {option}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+            <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px] ">
+              {questions[currentQuestionIndex].options.map(
+                (option, optionIndex) => (
+                  <li
+                    key={optionIndex}
+                    className={`choice-${optionIndex} shadow-md mt-20 h-[240px] w-[240px] rounded-lg flex items-center justify-center text-center mb-4 ${selectedOption === optionIndex ? 'selected ' : ''} ${fadeOut ? 'fade-out' : ''}`}
+                    onClick={() => handleOptionClick(optionIndex)}
+                    style={{
+                      backgroundColor:
+                        optionIndex === 0
+                          ? "#798BFF"
+                          : optionIndex === 1
+                          ? "#FFFFFF"
+                          : optionIndex === 2
+                          ? "#35F27F"
+                          : optionIndex === 3
+                          ? "#37C1FF"
+                          : "",
+                      transitionDuration: selectedOption === optionIndex ? '0.6s' : '2.6s' // Adjust transition duration
+                    }}
+                  >
+                    <img
+                      src={option}
+                      alt={`Option ${optionIndex}`}
+                      className="option-image"
+                      height={200}
+                      width={200}
+                    />
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default HugisPage;
+
