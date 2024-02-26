@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../../../css/quiz.css";
@@ -6,14 +6,10 @@ import "../../../css/quiz.css";
 interface Question {
   id: number;
   question_text: string;
+  question_image: string;
   options: string[];
+  option_images: string[];
   correct_option_index: number;
-}
-
-interface Result {
-  exam_name: string;
-  score: number;
-  date_taken: string;
 }
 
 const Kulay = () => {
@@ -121,13 +117,16 @@ const Kulay = () => {
             <h2 className="text-center font-semibold mb-2 text-[40px] text-[#FF8484]">
               Panuto {currentQuestionIndex + 1}
             </h2>
-            <p className="text-[40px] text-white text-center">
-              {questions[currentQuestionIndex].question_text}
-            </p>
-
+            <p className="text-[40px] text-white text-center">{questions[currentQuestionIndex].question_text}</p>
+            <img
+              src={questions[currentQuestionIndex].question_image}
+              className="option-image"
+              height={200}
+              width={200}
+            />
             <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px] ">
               {questions[currentQuestionIndex].options.map(
-                (option, optionIndex) => (
+                (optionText, optionIndex) => (
                   <li
                     key={optionIndex}
                     className={`choice-${optionIndex} shadow-md mt-20 h-[240px] w-[240px] rounded-lg flex items-center justify-center text-center mb-4 ${selectedOption === optionIndex ? 'selected ' : ''} ${fadeOut ? 'fade-out' : ''}`}
@@ -146,8 +145,9 @@ const Kulay = () => {
                       transitionDuration: selectedOption === optionIndex ? '0.6s' : '2.6s' // Adjust transition duration
                     }}
                   >
+                    <p>{optionText}</p>
                     <img
-                      src={option}
+                      src={questions[currentQuestionIndex].option_images[optionIndex]}
                       alt={`Option ${optionIndex}`}
                       className="option-image"
                       height={200}
@@ -165,4 +165,3 @@ const Kulay = () => {
 };
 
 export default Kulay;
-
