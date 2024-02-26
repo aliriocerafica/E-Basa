@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../../../css/quiz.css";
@@ -6,14 +6,10 @@ import "../../../css/quiz.css";
 interface Question {
   id: number;
   question_text: string;
+  question_image: string;
   options: string[];
+  option_images: string[];
   correct_option_index: number;
-}
-
-interface Result {
-  exam_name: string;
-  score: number;
-  date_taken: string;
 }
 
 const Numero = () => {
@@ -61,13 +57,13 @@ const Numero = () => {
 
   const updateScore = (optionIndex: number) => {
     if (optionIndex === questions[currentQuestionIndex].correct_option_index) {
-      setTotalScore(prevScore => prevScore + 1);
+      setTotalScore((prevScore) => prevScore + 1);
     }
   };
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setSelectedOption(null);
       setFadeOut(false); // Reset fade out state
     } else {
@@ -121,16 +117,27 @@ const Numero = () => {
             <h2 className="text-center font-semibold mb-2 text-[40px] text-[#FF8484]">
               Panuto {currentQuestionIndex + 1}
             </h2>
-            <p className="text-[40px] text-white text-center">
+            <p className="text-[40px] text-white text-center ">
               {questions[currentQuestionIndex].question_text}
             </p>
-
+            {questions[currentQuestionIndex].question_image && (
+              <div className="image1 flex justify-center items-center">
+              <img
+                src={questions[currentQuestionIndex].question_image}
+                className="option-image"
+                height={200}
+                width={200}
+              />
+              </div>
+            )}
             <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px] ">
               {questions[currentQuestionIndex].options.map(
-                (option, optionIndex) => (
+                (optionText, optionIndex) => (
                   <li
                     key={optionIndex}
-                    className={`choice-${optionIndex} shadow-md mt-20 h-[240px] w-[240px] rounded-lg flex items-center justify-center text-center mb-4 ${selectedOption === optionIndex ? 'selected ' : ''} ${fadeOut ? 'fade-out' : ''}`}
+                    className={`choice-${optionIndex} shadow-md mt-10 h-[240px] w-[240px] rounded-lg  mb-4 ${
+                      selectedOption === optionIndex ? "selected " : ""
+                    } ${fadeOut ? "fade-out" : ""}`}
                     onClick={() => handleOptionClick(optionIndex)}
                     style={{
                       backgroundColor:
@@ -143,16 +150,14 @@ const Numero = () => {
                           : optionIndex === 3
                           ? "#37C1FF"
                           : "",
-                      transitionDuration: selectedOption === optionIndex ? '0.6s' : '2.6s' // Adjust transition duration
+                      transitionDuration:
+                        selectedOption === optionIndex ? "0.6s" : "2.6s", // Adjust transition duration
                     }}
                   >
-                    <img
-                      src={option}
-                      alt={`Option ${optionIndex}`}
-                      className="option-image"
-                      height={200}
-                      width={200}
-                    />
+                   
+                    <div className="text-[#000000] text-center mt-2">
+                      <p>{optionText}</p>
+                    </div>
                   </li>
                 )
               )}
@@ -162,7 +167,7 @@ const Numero = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Numero;
-
