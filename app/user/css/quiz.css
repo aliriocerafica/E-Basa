@@ -1,5 +1,3 @@
-
-
 .page-container {
   background-image: url('/quizbg3.png'); /* Replace with the actual path to your image */
   background-size: cover;
@@ -33,16 +31,15 @@ justify-content: center;
 }
 .selected {
 border: 8px solid #49ff00; /* Change border color as needed */
-transition: border-color 0.3s ease; /* Adjust transition duration */
+transition: border-color 0.1s ease; /* Adjust transition duration */
 }
 .choice-item:hover {
 border: 4px solid #FF8484; /* Change border color as needed */
 
 }
 .choice {
-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.3s ease-in-out; /* Adjust the duration here */
 }
-
 .fade-out {
 opacity: 0;
  
