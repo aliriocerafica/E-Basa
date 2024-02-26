@@ -32,7 +32,7 @@ interface User {
 
 export default function Barchart() {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Set initial loading state to true
   const [error, setError] = useState<string | null>(null);
 
   const searchParams = useSearchParams();
@@ -40,7 +40,6 @@ export default function Barchart() {
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
       setError(null);
 
       try {
@@ -63,18 +62,12 @@ export default function Barchart() {
           setError('An unknown error occurred');
         }
       } finally {
-        setIsLoading(false);
+        setIsLoading(false); // Set loading to false once data fetching is done
       }
     };
 
     fetchData();
   }, [userId]);
-
-  if (isLoading) return <div>Loading...</div>;
-
-  if (error) return <div>Error: {error}</div>;
-
-  if (!user) return <div>User not found</div>;
 
   const [chartData, setChartData] = useState<{
     labels: string[];
@@ -94,6 +87,9 @@ export default function Barchart() {
   const [totalGrade, setTotalGrade] = useState(0);
 
   useEffect(() => {
+    // Make sure user data is available before processing
+    if (!user) return;
+
     const grades = [32, 31, 15, 90];
     const total = grades.reduce((acc, curr) => acc + curr, 0);
     const adjustedTotal = total > 100 ? 100 : total;
@@ -160,12 +156,18 @@ export default function Barchart() {
         },
       },
     });
-  }, []);
+  }, [user]); // Trigger effect when user data changes
 
+  // Conditionally render based on loading, error, and user existence
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!user) return <div>User not found</div>;
 
+  // Render the rest of the component
   return (
-    <><div className="dash-bg">
-    <title>Test Summary</title>
+    <>
+      <div className="dash-bg">
+      <title>Test Summary</title>
     <div className="student-test">
       <h1 className="studenthead">
         Student Grade
@@ -226,8 +228,8 @@ export default function Barchart() {
 </div>
 
 </div>
-</div>
-
+      </div>
     </>
   );
 }
+
