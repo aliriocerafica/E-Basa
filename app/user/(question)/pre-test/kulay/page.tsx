@@ -166,7 +166,7 @@ const Kulay = () => {
                       width={170}
                       style={{ display: "block", margin: "0 auto" }}
                     />
-                    <div className="text-[#000000] text-center mt-2">
+                    <div className="text-[#000000] text-center ">
                       <p>{optionText}</p>
                     </div>
                   </li>
