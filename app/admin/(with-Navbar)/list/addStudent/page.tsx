@@ -1,6 +1,8 @@
 //app\admin\list\addStudent\page.tsx
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import "../../../css/dash.css";
+
 
 interface FormData {
   user_type: string;
@@ -70,6 +72,7 @@ const AddStudent: React.FC = () => {
   };
 
   return (
+    <div className="dash-bg">
       <div className="justify-center head pt-[120px]">
         <header className="bg-white ml-[565px] rounded-lg shadow-md p-4 w-[1090px] text-2xl">
           <title>Add Student</title>
@@ -294,6 +297,7 @@ const AddStudent: React.FC = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
     </div>
   );

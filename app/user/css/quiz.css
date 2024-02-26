@@ -26,6 +26,7 @@
 .topics-one{
     display: flex;
      align-items: center;
+<<<<<<< HEAD
     justify-content: center;
 }
 .selected {
@@ -44,3 +45,9 @@
   opacity: 0;
    
 }
+=======
+  justify-content: center;
+}
+
+
+>>>>>>> 0d8d72136492221b2928329d48a3769baf3d59a0
