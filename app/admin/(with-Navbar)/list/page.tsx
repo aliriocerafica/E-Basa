@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/studentlist.css";
+import "../../css/dash.css";
 import Link from 'next/link';
 
 const StudentList = () => {
