@@ -1,7 +1,7 @@
 //app\admin\list\addStudent\page.tsx
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import "../../../css/studentlist.css";
+import "../../../css/dash.css";
 
 
 interface FormData {
