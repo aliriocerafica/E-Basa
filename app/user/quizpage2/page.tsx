@@ -19,7 +19,7 @@ const page = () => {
             </h5>
           </a>
           <p className="mb-3  text-[50px] text-center  text-white font-normal dark:text-gray-400">
-            Basahing mabuti ang mga tanong at kwento piliin ang box ng tamang sagot.
+            Basahing mabuti ang mga tanong at piliin sa mga kahon ang tamang sagot.
           </p>
           
         </div>

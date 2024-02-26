@@ -1,4 +1,5 @@
 "use client";
+import "../../css/quiz.css"; // Corrected import statement
 import { useEffect, useState } from 'react';
 
 interface Question {
@@ -89,27 +90,31 @@ const HugisPage = () => {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4 text-black">Quiz</h1>
+    <div className="page-container justify-center flex flex-wrap">
+    <div className="">
       {questions.length > 0 && (
-        <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-2 text-black">Question {currentQuestionIndex + 1}</h2>
-          <p className="mb-4 text-black">{questions[currentQuestionIndex].question_text}</p>
-          <ul className="mb-4">
-            {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-              <li key={optionIndex} className="text-black">
-                <input
-                  type="radio"
-                  id={`option${optionIndex}`}
-                  name="options"
-                  value={optionIndex}
-                  checked={selectedOption === optionIndex}
-                  onChange={() => handleOptionChange(optionIndex)}
-                />
-                <label htmlFor={`option${optionIndex}`} className="ml-2">{option}</label>
-              </li>
-            ))}
+        <div className="w-[1400px] h-[700px] p-2 bg-[#20683C] border-8 border-[#BF977B] rounded-lg">
+          <h2 className=" text-center font-semibold mb-2 text-[40px] text-[#FF8484]">Panuto {currentQuestionIndex + 1}</h2>
+          <p className="text-[40px] text-white text-center">{questions[currentQuestionIndex].question_text}</p>
+
+          <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px]">
+          
+          {questions[currentQuestionIndex].options.map((option, optionIndex) => (
+        <li key={optionIndex} className={`choice-${optionIndex + 1} shadow-md mt-20 bg-[#798BFF] h-[240px] w-[240px]  rounded-lg  flex items-center justify-center text-center mb-4 hover:bg-blue-500 hover:text-white`}>
+          <input
+            type="radio"
+            id={`option${optionIndex}`}
+            name="options"
+            value={optionIndex}
+            checked={selectedOption === optionIndex}
+            onChange={() => handleOptionChange(optionIndex)}
+          />
+          <label htmlFor={`option${optionIndex}`} className="ml-2">{option}</label>
+        </li>
+      ))}
+        
           </ul>
+          
           <div className="flex justify-between mb-4">
             <button
               className="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none"
@@ -123,10 +128,11 @@ const HugisPage = () => {
             >
               {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
             </button>
-            <p className="text-black">Total Score: {totalScore}/{questions.length}</p>
+            {/* <p className="text-black">Total Score: {totalScore}/{questions.length}</p> */}
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
