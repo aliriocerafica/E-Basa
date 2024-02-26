@@ -75,9 +75,7 @@ export default function LoginPage() {
                   value={formData.username}
                   onChange={handleChange}
                   placeholder="Numero ng ID"
-                  className="w-96 h-[46px] px-3 font-bold text-[20px] py-2 placeholder-black rounded-full focus:outline-none focus:ring
-                  
-                    dark:placeholder-black dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                  className="text-black w-96 h-[46px] px-3 font-bold text-[20px] py-2 placeholder-black rounded-full focus:outline-none focus:ring dark:placeholder-black dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                 />
               </div>
               <div className="mb-6">
@@ -88,11 +86,7 @@ export default function LoginPage() {
                   placeholder="Password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 text-[20px]  placeholder-black h-[46px]
-                   rounded-full focus:outline-none focus:ring
-                   
-                     dark:bg-gray-700 dark:text-white
-                      dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                  className="w-full px-3 py-2 text-[20px]  placeholder-black h-[46px] rounded-full focus:outline-none focus:ring dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                 />
               </div>
               <div className="mb-6 font-sans ">

@@ -90,10 +90,10 @@ const HugisPage = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4 text-black">Unang Pag-susulit</h1>
+      <h1 className="text-3xl font-bold mb-4 text-black">Quiz</h1>
       {questions.length > 0 && (
         <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-2 text-black">Tanong {currentQuestionIndex + 1} para sa hugis</h2>
+          <h2 className="text-xl font-semibold mb-2 text-black">Question {currentQuestionIndex + 1}</h2>
           <p className="mb-4 text-black">{questions[currentQuestionIndex].question_text}</p>
           <ul className="mb-4">
             {questions[currentQuestionIndex].options.map((option, optionIndex) => (
