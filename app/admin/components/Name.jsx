@@ -8,9 +8,9 @@ const Name = () => {
       <header className="header">
         <h1>Dashboard</h1>
       </header>
-      <div className="DashDisplay mt-2 mb-2 ml-[200px]">
-        <div class="grid grid-cols-4 gap-2">
-          <div className="UserCount relative h-[250px] w-full rounded-[10px]  text-center flex items-start justify-start">
+      <div className="DashDisplay mt-2 mb-2 ml-[200px] sha">
+        <div class="grid grid-cols-4 gap-2 ">
+          <div className="UserCount shadow-lg relative h-[250px] w-full rounded-[10px]  text-center flex items-start justify-start">
             <img
               src="/dash/1.png"
               alt="User Count"
@@ -22,7 +22,7 @@ const Name = () => {
             </div>
           </div>
 
-          <div className="Test relative h-[250px] w-full rounded-[10px] text-center flex items-start justify-start">
+          <div className="Test  shadow-lg relative h-[250px] w-full rounded-[10px] text-center flex items-start justify-start">
             <img
               src="/dash/2.png"
               alt="Test"
@@ -34,7 +34,7 @@ const Name = () => {
             </div>
           </div>
 
-          <div className="Topics relative h-[250px] w-full rounded-[10px] text-center flex items-start justify-start">
+          <div className="Topics  shadow-lg relative h-[250px] w-full rounded-[10px] text-center flex items-start justify-start">
             <img
              src="/dash/3.png"
               alt="Topics"
@@ -46,7 +46,7 @@ const Name = () => {
             </div>
           </div>
 
-          <div className="Educators-Count relative h-[250px] w-full rounded-[10px]  text-center flex items-start justify-start">
+          <div className="Educators-Count  shadow-lg relative h-[250px] w-full rounded-[10px]  text-center flex items-start justify-start">
             <img
             src="/dash/4.png"
               alt="Educators Count"

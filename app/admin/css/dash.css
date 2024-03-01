@@ -5,8 +5,9 @@
 
 /* Other CSS styles */
 
-.dash-bg {
+.dash1-bg {
   background-image: url("/bgad.png");
+  /* background-color: #B7E9FF; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
