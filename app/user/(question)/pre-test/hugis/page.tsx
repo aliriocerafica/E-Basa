@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../../../css/quiz.css";
@@ -61,13 +61,13 @@ const Hugis = () => {
 
   const updateScore = (optionIndex: number) => {
     if (optionIndex === questions[currentQuestionIndex].correct_option_index) {
-      setTotalScore(prevScore => prevScore + 1);
+      setTotalScore((prevScore) => prevScore + 1);
     }
   };
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setSelectedOption(null);
       setFadeOut(false); // Reset fade out state
     } else {
@@ -130,7 +130,9 @@ const Hugis = () => {
                 (option, optionIndex) => (
                   <li
                     key={optionIndex}
-                    className={`choice-${optionIndex} shadow-md mt-20 h-[240px] w-[240px] rounded-lg flex items-center justify-center text-center mb-4 ${selectedOption === optionIndex ? 'selected ' : ''} ${fadeOut ? 'fade-out' : ''}`}
+                    className={`choice-${optionIndex} shadow-md mt-20 h-[240px] w-[240px] rounded-lg flex items-center justify-center text-center mb-4 ${
+                      selectedOption === optionIndex ? "selected " : ""
+                    } ${fadeOut ? "fade-out" : ""}`}
                     onClick={() => handleOptionClick(optionIndex)}
                     style={{
                       backgroundColor:
@@ -143,7 +145,8 @@ const Hugis = () => {
                           : optionIndex === 3
                           ? "#37C1FF"
                           : "",
-                      transitionDuration: selectedOption === optionIndex ? '0.6s' : '2.6s' // Adjust transition duration
+                      transitionDuration:
+                        selectedOption === optionIndex ? "0.6s" : "2.6s", // Adjust transition duration
                     }}
                   >
                     <img
@@ -165,4 +168,3 @@ const Hugis = () => {
 };
 
 export default Hugis;
-

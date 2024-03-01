@@ -122,12 +122,12 @@ const Kulay = () => {
             </p>
             {questions[currentQuestionIndex].question_image && (
               <div className="image1 flex justify-center items-center">
-              <img
-                src={questions[currentQuestionIndex].question_image}
-                className="option-image"
-                height={200}
-                width={200}
-              />
+                <img
+                  src={questions[currentQuestionIndex].question_image}
+                  className="option-image"
+                  height={200}
+                  width={200}
+                />
               </div>
             )}
             <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px] ">
@@ -178,7 +178,6 @@ const Kulay = () => {
       </div>
     </div>
   );
-  
 };
 
 export default Kulay;

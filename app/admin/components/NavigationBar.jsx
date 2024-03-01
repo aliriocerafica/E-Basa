@@ -52,34 +52,34 @@ export function SideNav() {
 
       {isOpen && (
         <Card className="h-[calc(100vh-6rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 side-nav">
-          <div className="mb-2 p-4 v">
-            <img src="/loading4.png" alt="Logo" className="h-20 w-auto pl-10" />
+          <div className="mb-1 p-2 ">
+            <img src="/loading4.png" alt="Logo" className="h-16 w-auto ml-[80px]" />
           </div>
 
           <List className="space-y-2">
             <Link href="/admin/dashboard">
-              <ListItem className="flex items-center home-side">
-              <span className="ml-2 home">HOME</span>
+              <ListItem className="tex-left home-side">
+              <span className=" home">Home</span>
               </ListItem>
             </Link>
             <Link href="/admin/list">
               <ListItem className="flex items-center list-side">
-              <span className="ml-2 list">STUDENT LIST</span>
+              <span className="ml-2 list">Student List</span>
               </ListItem>
             </Link>
             <Link href="/admin/rank">
             <ListItem className="flex items-center rank-side">
-              <span className="ml-2 rank">STUDENT RANKINGS</span>
+              <span className="ml-2 rank">Student Rankings</span>
               <ListItemSuffix>
                 <Chip value="" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
               </ListItemSuffix>
             </ListItem>
             </Link>
             <ListItem className="flex items-center test-side">
-              <span className="ml-2 test">TEST</span>
+              <span className="ml-2 test">Test</span>
             </ListItem>
             <ListItem className="flex items-center blank-side">
-              <span className="ml-2 blank">BLANK</span>
+              <span className="ml-2 blank">Sample</span>
             </ListItem>
           </List>
         </Card>

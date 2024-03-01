@@ -1,5 +1,5 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
 import "../css/name.css";
 
 const Name = () => {
@@ -8,23 +8,55 @@ const Name = () => {
       <header className="header">
         <h1>Dashboard</h1>
       </header>
-      <div className="flex flex-justify items-center name-list">
-        {/* Box 1 */}
-        <div className="box-wrapper">
-          <div className="inline-block p-4 bg-white shadow-md rounded-lg box">
-            <img src="/box1.png" alt="Image" className="w-full h-auto mb-4" />
+      <div className="DashDisplay mt-2 mb-2 ml-[200px]">
+        <div class="grid grid-cols-4 gap-2">
+          <div className="UserCount relative h-[250px] w-full rounded-[10px]  text-center flex items-start justify-start">
+            <img
+              src="/dash/1.png"
+              alt="User Count"
+              className="absolute top-0 left-0 w-[150px] h-[150px] object-cover rounded-[10px]  "
+            />
+            <div className="labels ">
+              <h1>200</h1>
+              
+            </div>
           </div>
-        </div>
-        {/* Box 2 */}
-        <div className="box-wrapper">
-          <div className="inline-block p-4 bg-white shadow-md rounded-lg box">
-            <img src="/box2.png" alt="Image" className="w-full h-auto mb-4" />
+
+          <div className="Test relative h-[250px] w-full rounded-[10px] text-center flex items-start justify-start">
+            <img
+              src="/dash/2.png"
+              alt="Test"
+              className="absolute top-0 left-0 w-[150px] h-[150px]  object-cover rounded-[10px]"
+            />
+       <div className="labels ">
+              <h1>200</h1>
+              
+            </div>
           </div>
-        </div>
-        {/* Box 3 */}
-        <div className="box-wrapper">
-          <div className="inline-block p-4 bg-white shadow-md rounded-lg box">
-            <img src="/box3.png" alt="Image" className="w-full h-auto mb-4" />
+
+          <div className="Topics relative h-[250px] w-full rounded-[10px] text-center flex items-start justify-start">
+            <img
+             src="/dash/3.png"
+              alt="Topics"
+              className="absolute top-0 left-0 w-[150px] h-[150px]  object-cover rounded-[10px]"
+            />
+         <div className="labels ">
+              <h1>200</h1>
+              
+            </div>
+          </div>
+
+          <div className="Educators-Count relative h-[250px] w-full rounded-[10px]  text-center flex items-start justify-start">
+            <img
+            src="/dash/4.png"
+              alt="Educators Count"
+              className="absolute top-0 left-0 w-[150px] h-[150px]  object-cover rounded-[10px]"
+            /> 
+            <div className="labels ">
+            <h1>200</h1>
+            
+          </div>
+        
           </div>
         </div>
       </div>

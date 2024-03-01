@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../../../css/quiz.css";
@@ -57,13 +57,13 @@ const Numero = () => {
 
   const updateScore = (optionIndex: number) => {
     if (optionIndex === questions[currentQuestionIndex].correct_option_index) {
-      setTotalScore((prevScore) => prevScore + 1);
+      setTotalScore(prevScore => prevScore + 1);
     }
   };
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
       setSelectedOption(null);
       setFadeOut(false); // Reset fade out state
     } else {
@@ -77,7 +77,7 @@ const Numero = () => {
 
     if (user_id && access_token) {
       const date_taken = new Date().toISOString();
-      const result: Result = {
+      const result = {
         exam_name: "Numero",
         score: totalScore,
         date_taken: date_taken,
@@ -122,12 +122,12 @@ const Numero = () => {
             </p>
             {questions[currentQuestionIndex].question_image && (
               <div className="image1 flex justify-center items-center">
-              <img
-                src={questions[currentQuestionIndex].question_image}
-                className="option-image"
-                height={200}
-                width={200}
-              />
+                <img
+                  src={questions[currentQuestionIndex].question_image}
+                  className="option-image"
+                  height={200}
+                  width={200}
+                />
               </div>
             )}
             <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px] ">
@@ -154,7 +154,6 @@ const Numero = () => {
                         selectedOption === optionIndex ? "0.6s" : "2.6s", // Adjust transition duration
                     }}
                   >
-                   
                     <div className="text-[#000000] text-center mt-2">
                       <p>{optionText}</p>
                     </div>
@@ -167,7 +166,6 @@ const Numero = () => {
       </div>
     </div>
   );
-  
 };
 
 export default Numero;

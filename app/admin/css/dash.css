@@ -27,24 +27,26 @@
   text-transform: none;
 }
 .header-act{
-
-  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
   font-weight: bold;
   max-width: 100%; /* Set the maximum width to 100% */
   background-color: white;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .bod{
-  font-family: 'Harmattan', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 .bod {
+ 
   border-top: 1px solid black; /* Add a 2px solid black border to the top of the tr */
 }
 
 /* Optional: Adjust padding for better spacing */
 .bod td {
+
   padding: 10px 6px;
 }

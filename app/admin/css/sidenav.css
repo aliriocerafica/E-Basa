@@ -19,7 +19,8 @@
     border-color:black;
 }
 .side-nav {
-  
+    font-weight: normal;
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
     height: 100vh;
     width: 20rem;
     padding: 0;
@@ -38,17 +39,19 @@
 }
 
 .home-side{
-
+    font-weight: normal;
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
     background-color: #756AAE;
     color: white;
     height: 115px;
-    font-size: 20px;
+       font-size: 25px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
 .home{
-    margin-left: 90px;
-    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+    margin-left: 50px;
+ 
+   
 }
 .home-side:hover {
     background-color: #614FBC; /* Change to desired background color on hover */
@@ -61,16 +64,18 @@
 }
 /* Eend Home button */
 .list-side{
-
+    font-weight: normal;
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
     background-color: #FCC40B;;
     color: white;
     height: 115px;
-    font-size: 20px;
+       font-size: 25px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
 .list{
     font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+
     margin-left: 50px;
 }
 .list-side:hover {
@@ -83,18 +88,21 @@
 }
 /* Eend list button */
 .rank-side{
+    font-weight: normal;
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
     background-color: #FE7870;;
     color: white;
     height: 115px;
-    font-size: 20px;
+       font-size: 25px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
 .rank{
-    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+
     margin-left: 50px;
 }
 .rank-side:hover {
+       font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
     background-color: #f54e45; /* Change to desired background color on hover */
     cursor: pointer; /* Show pointer cursor on hover */
 }
@@ -104,15 +112,17 @@
 }
 /* Eend rank button */
 .blank-side{
+    font-weight: normal;
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
     background-color: #39B8FF;;
     color: white;
     height: 115px;
-    font-size: 20px;
+       font-size: 25px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
 .blank{
-    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+  
     margin-left: 50px;
 }
 .blank-side:hover {
@@ -126,15 +136,17 @@
 /* Eend blank button */
 
 .test-side{
+    font-weight: normal;
+    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
     background-color:  #85C763;
     color: white;
     height: 115px;
-    font-size: 20px;
+       font-size: 25px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
 .test{
-    font-family: '__more_2dcc9f', '__more_Fallback_2dcc9f';
+    
     margin-left: 50px;
 }
 .test-side:hover {

@@ -9,39 +9,39 @@ const Dashboard = () => {
     <div className="dash-bg">
           <title>Dashboard</title>
        < Name />
-      <div className="header-act ml-[385px] w-[1380px]" >
+      <div className="header-act ml-[385px] w-[1380px] mt-10" >
         {" "}
         <header>Activity</header>
       </div>
       <div
-        className="relative overflow-x-auto sm:rounded-lg ml-[385px]"
+        className="relative overflow-x-auto sm:rounded-[5px] ml-[385px]"
         style={{ width: "1380px" }}
       >
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="heads ">
             <tr>
-              <th className="px-6 py-3 text-center text-lg    uppercase tracking-wider ">
+              <th className="px-6 py-3 text-center text-[18px]    uppercase tracking-wider ">
                 ID
               </th>
-              <th className="px-6 py-3 text-center text-lg  uppercase tracking-wider ">
+              <th className="px-6 py-3 text-center text-[18px] uppercase tracking-wider ">
                 Full Name
               </th>
-              <th className="px-6 py-3 text-center text-lg uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-[18px]  uppercase tracking-wider">
                 Date
               </th>
-              <th className="px-6 py-3 text-center text-lg uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-[18px]  uppercase tracking-wider">
                 Role
               </th>
-              <th className="px-6 py-3 text-center text-lg  uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-[18px]   uppercase tracking-wider">
                 Status
               </th>
-              <th className="px-6 py-3 text-center text-lg  uppercase tracking-wider">
+              <th className="px-6 py-3 text-center text-[18px]   uppercase tracking-wider">
                 Action
               </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200 ">
-          <tr className="bod">
+          <tr className="bod text-[16px] ">
               <td className="px-6 text-center py-4 whitespace-nowrap">k112</td>
               <td className="px-6 text-center py-4 whitespace-nowrap">Jane Doe</td>
               <td className="px-6 text-center py-4 whitespace-nowrap">October 23 , 2023  - 8:00 AM</td>
