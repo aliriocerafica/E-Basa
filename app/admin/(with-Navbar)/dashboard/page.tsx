@@ -17,7 +17,7 @@ const Dashboard = () => {
         className="relative overflow-x-auto sm:rounded-[5px] ml-[385px]"
         style={{ width: "1380px" }}
       >
-        <table className="min-w-full divide-y divide-gray-200   border-collapse">
+        <table className="min-w-full divide-y divide-gray-200  ">
           <thead className="heads ">
             <tr>
               <th className="px-6 py-3 text-center text-[18px]    uppercase tracking-wider ">
