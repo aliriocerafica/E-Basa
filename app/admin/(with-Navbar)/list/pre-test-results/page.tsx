@@ -90,7 +90,19 @@ export default function Barchart() {
     // Make sure user data is available before processing
     if (!user) return;
 
-    const grades = [32, 31, 15, 90];
+    let hugis_value, kulay_value, numero_value;
+
+    user.pretest_results.forEach((result) => {
+      if (result.exam_name === "Hugis") {
+        hugis_value = result.score * 10;
+      } else if (result.exam_name === "Kulay") {
+        kulay_value = result.score * 10;
+      } else if (result.exam_name === "Numero") {
+        numero_value = result.score * 10;
+      }
+    });
+    
+    const grades = [hugis_value, kulay_value, numero_value];
     const total = grades.reduce((acc, curr) => acc + curr, 0);
     const adjustedTotal = total > 100 ? 100 : total;
 
@@ -118,7 +130,7 @@ export default function Barchart() {
     setTotalGrade(percentage);
 
     setChartData({
-      labels: ['PN', 'PB', 'PT', 'PU', 'Kabuuan'],
+      labels: ['Hugis', 'Kulay', 'Numero'],
       datasets: [
         {
           label: 'Grades',
@@ -181,7 +193,7 @@ export default function Barchart() {
     <a style={{ fontSize: '26px' }}><b>Pangalan:</b> {user.firstname} {user.lastname}</a>
     <a style={{ marginLeft: '45px', fontSize: '26px' }}><b>Edad:</b> {user.age}</a>
   </div>
-  <a style={{ fontSize: '26px' }}><b>Baitang:</b> 1</a>
+    <a style={{ fontSize: '26px' }}><b>Baitang:</b> 1</a>
   <h2 className="text-left mt-4" style={{ fontSize: '45px' }}>Pre Test Summary</h2>
 </div>
 
