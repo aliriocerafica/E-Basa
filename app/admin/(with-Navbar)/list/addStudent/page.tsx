@@ -5,6 +5,7 @@ import "../../../css/dash.css";
 
 
 interface FormData {
+  user_id: "",
   user_type: string;
   test: string;
   firstname: string;
@@ -21,6 +22,7 @@ interface FormData {
 
 const AddStudent: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
+    user_id: "",
     user_type: "Student",
     test: "0",
     firstname: "",

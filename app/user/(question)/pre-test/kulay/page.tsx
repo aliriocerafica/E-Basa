@@ -26,6 +26,7 @@ const Kulay = () => {
         const response = await fetch("http://localhost:8000/kulay/");
         if (response.ok) {
           const data = await response.json();
+          console.log("Correct option index:", data.correct_option_index);
           setQuestions(data);
         } else {
           throw new Error("Failed to fetch questions");
@@ -48,22 +49,40 @@ const Kulay = () => {
   };
 
   const submitOption = (optionIndex: number) => {
-    updateScore(optionIndex);
-    setFadeOut(true); // Trigger fade out animation
+    const correctOptionIndex = questions[currentQuestionIndex].correct_option_index;
+
+    console.log("Option index:", optionIndex);
+    console.log("Correct option index:", correctOptionIndex);
+
+    // Log the user's selected answer
+     console.log("Your answer:", questions[currentQuestionIndex].options[optionIndex]);
+  
+    // Check if the selected option is correct
+    if (optionIndex === correctOptionIndex) {
+      console.log("Correct Answer!");
+      console.log("The correct answer is:", questions[currentQuestionIndex].options[correctOptionIndex]);
+      updateScore(optionIndex);
+    } else {
+      console.log("Wrong Answer!");
+      console.log("The correct answer is:", questions[currentQuestionIndex].options[correctOptionIndex]);
+    }
+  
+    // Trigger fade out animation
+    setFadeOut(true);
     setTimeout(() => {
       handleNextQuestion();
     }, 500); // Wait for animation to complete
-  };
+  }
 
   const updateScore = (optionIndex: number) => {
     if (optionIndex === questions[currentQuestionIndex].correct_option_index) {
-      setTotalScore((prevScore) => prevScore + 1);
+      setTotalScore(prevScore => prevScore + 1);
     }
   };
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
       setSelectedOption(null);
       setFadeOut(false); // Reset fade out state
     } else {
@@ -77,7 +96,8 @@ const Kulay = () => {
 
     if (user_id && access_token) {
       const date_taken = new Date().toISOString();
-      const result: Result = {
+      console.log("Total Score", totalScore);
+      const result = {
         exam_name: "Kulay",
         score: totalScore,
         date_taken: date_taken,
