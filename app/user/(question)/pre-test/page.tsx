@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../../css/quiz.css";
@@ -75,11 +75,11 @@ const PreTest = () => {
   }
 
   const updateScore = (optionIndex: number) => {
-    const correctOptionIndex = questions[currentQuestionIndex].correct_option_index;
-    if (optionIndex === correctOptionIndex) {
-        setTotalScore(prevScore => prevScore + 1);
+    if (optionIndex === questions[currentQuestionIndex].correct_option_index) {
+      setTotalScore(prevScore => prevScore + 1);
     }
-};
+  };
+
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prevIndex => prevIndex + 1);
@@ -98,7 +98,7 @@ const PreTest = () => {
       const date_taken = new Date().toISOString();
       console.log("Total Score", totalScore);
       const result = {
-        exam_name: "Numero",
+        exam_name: "Kulay",
         score: totalScore,
         date_taken: date_taken,
       };
@@ -174,7 +174,19 @@ const PreTest = () => {
                         selectedOption === optionIndex ? "0.6s" : "2.6s", // Adjust transition duration
                     }}
                   >
-                    <div className="text-[#000000] text-center mt-2">
+                    <img
+                      src={
+                        questions[currentQuestionIndex].option_images[
+                          optionIndex
+                        ]
+                      }
+                      alt={`Option ${optionIndex}`}
+                      className="option-image flex justify-center items-center"
+                      height={170}
+                      width={170}
+                      style={{ display: "block", margin: "0 auto" }}
+                    />
+                    <div className="text-[#000000] text-center ">
                       <p>{optionText}</p>
                     </div>
                   </li>
