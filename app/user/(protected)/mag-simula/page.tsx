@@ -31,7 +31,7 @@ const Page = () => {
             unang pagsusulit."
           </p>
           <div className="flex justify-center">
-            <Link href="/user/mga-paksa">
+            <Link href="/user/pre-test">
             <button className="button-container">
               <img
                 src="/Magsimula.png"
