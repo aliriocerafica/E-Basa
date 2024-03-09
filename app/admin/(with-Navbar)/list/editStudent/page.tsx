@@ -5,102 +5,115 @@ import "../../../css/dash.css";
 import { useSearchParams } from 'next/navigation';
 
 
-const EditStudent = () => {
-  const [users, setUsers] = useState([]);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastname: '',
-    middle_initial: '',
-    age: '',
-    email: '',
-    gender: '',
-    school: '',
-    _id: '',
-    password: '',
-    confirmPassword: '',
-  });
 
-  const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+interface FormData {
+  user_type: string;
+  test: string;
+  firstname: string;
+  lastname: string;
+  middle_initial: string;
+  age: string;
+  email: string;
+  gender: string;
+  school: string;
+  username: string;
+  password: string;
+  confirmPassword: string;
+}
 
-  const searchParams = useSearchParams();
-  const userId = searchParams.get('user_id');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setError(null);
-
-      try {
-        if (!userId) {
-          throw new Error('Missing user ID in search parameters');
+const EditStudent: React.FC = () => {
+    const [users, setUsers] = useState<User[]>([]);
+    const [formData, setFormData] = useState<User>({
+      firstname: '',
+      lastname: '',
+      middle_initial: '',
+      age: '',
+      email: '',
+      gender: '',
+      school: '',
+      username: '',
+      password: '',
+    });
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
+  
+    const searchParams = useSearchParams();
+    const userId = searchParams.get('user_id');
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        setError(null);
+        setIsLoading(true);
+  
+        try {
+          if (!userId) {
+            throw new Error('Missing user ID in search parameters');
+          }
+  
+          const response = await fetch(`http://localhost:8000/users/${userId}`);
+  
+          if (!response.ok) {
+            throw new Error(await response.text());
+          }
+  
+          const data = await response.json();
+          setFormData({
+            firstname: data.firstname,
+            lastname: data.lastname,
+            middle_initial: data.middle_initial,
+            age: data.age.toString(),
+            email: data.email,
+            gender: data.gender,
+            school: data.school,
+            username: data.username,
+            password: data.password,
+          });
+        } catch (err) {
+          setError(err instanceof Error ? err.message : 'An unknown error occurred');
+        } finally {
+          setIsLoading(false); // Set loading to false once data fetching is done
         }
+      };
+  
+      fetchData();
+    }, [userId]);
+  
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    };
+  
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>, formData: any) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError(null);
 
-        const response = await fetch(`http://localhost:8000/users/${userId}`);
+    try {
+        const response = await fetch(`http://localhost:8000/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
 
         if (!response.ok) {
-          throw new Error(await response.text());
+            throw new Error(await response.text());
         }
 
-        const data = await response.json();
-        // Assuming data is an object with user details
-        setFormData({
-          firstname: data.firstname,
-          lastname: data.lastname,
-          middle_initial: data.middle_initial,
-          age: data.age.toString(),
-          email: data.email,
-          gender: data.gender,
-          school: data.school,
-          user_id: data.user_id,
-          password: data.password,
-          confirmPassword: '',
-        });
-      } catch (err) {
+        // Assuming successful update, you might want to handle the response accordingly
+        const updatedData = await response.json();
+        console.log('User updated:', updatedData);
+    } catch (err) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');
-      } finally {
-        setIsLoading(false); // Set loading to false once data fetching is done
-      }
-    };
-
-    fetchData();
-  }, [userId]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  
-    try {
-      setIsLoading(true);
-      setError(null);
-  
-      const response = await fetch(`http://localhost:8000/users/${userId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (!response.ok) {
-        throw new Error(await response.text());
-      }
-  
-      // Handle successful update
-      console.log('User updated successfully');
-    } catch (error) {
-      setError(error instanceof Error ? error.message : 'An unknown error occurred');
     } finally {
-      setIsLoading(false);
+        setIsLoading(false);
     }
-  };
-  
+};
+
 
   
+
 
   
   return (
@@ -270,7 +283,7 @@ const EditStudent = () => {
                     type="text"
                     name="username"
                     placeholder="Enter school ID"
-                    value={formData.user_id}
+                    value={formData.username}
                     onChange={handleChange}
                   />
                 </div>
