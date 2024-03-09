@@ -180,13 +180,7 @@ const Kulay = () => {
         {questions.length > 0 && (
           <div className="w-[1400px] h-[700px] p-2 bg-[#20683C] border-8 border-[#BF977B] rounded-lg">
             <h2 className="text-center font-semibold mb-2 text-[40px] text-[#FF8484]">
-<<<<<<< HEAD
-              Panuto 
-          
-              {currentQuestionIndex + 1}
-=======
               Tanong {currentQuestionIndex + 1} / 80
->>>>>>> 19ac7676d2693cdcefc585df17c309b773cee6a2
             </h2>
             <p className="text-[40px] text-white text-center ">
               {questions[currentQuestionIndex].question_text}
@@ -199,9 +193,6 @@ const Kulay = () => {
                   height={200}
                   width={200}
                 />
-              
-
-      
               </div>
             )}
             <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px] ">
@@ -227,22 +218,6 @@ const Kulay = () => {
                       transitionDuration:
                         selectedOption === optionIndex ? "0.6s" : "2.6s", // Adjust transition duration
                     }}
-<<<<<<< HEAD
-                  > 
-                  <img
-                  src={
-                    questions[currentQuestionIndex].option_images[
-                      optionIndex
-                    ]
-                  }
-                  alt={`Option ${optionIndex}`}
-                  className="option-image flex justify-center items-center"
-                  height={170}
-                  width={170}
-                  style={{ display: "block", margin: "0 auto" }}
-                />
-                    <div className="text-[#000000] text-center mt-2">
-=======
                   >
                     {questions[currentQuestionIndex].option_images[optionIndex] !== "" && (
                       <img
@@ -254,7 +229,6 @@ const Kulay = () => {
                       />
                     )}
                     <div className="text-[#000000] text-center ">
->>>>>>> 19ac7676d2693cdcefc585df17c309b773cee6a2
                       <p>{optionText}</p>
                     </div>
                   </li>
