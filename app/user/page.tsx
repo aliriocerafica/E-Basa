@@ -1,53 +1,54 @@
-'use client';
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'
-
+"use client";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import "./css/quiz.css";
 interface FormData {
   username: string;
   password: string;
 }
 
 export default function LoginPage() {
-  const router = useRouter()
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
-    username: '',
-    password: ''
+    username: "",
+    password: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission behavior
     try {
-      localStorage.removeItem('access_token');
-      localStorage.removeItem('user_id');
-      const response = await fetch('http://localhost:8000/login/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("user_id");
+      const response = await fetch("http://localhost:8000/login/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
         throw new Error("Login failed");
       }
       const data = await response.json();
-      localStorage.setItem('access_token', data.access_token);
-      localStorage.setItem('user_id', data.user_id);
+      localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("user_id", data.user_id);
 
       console.log("Login successful", data);
 
       const test = data.test;
-      
+
       if (test == 0) {
-        router.push('/user/mag-simula');
-      } if (test == 1) {
-        router.push('/user/home');
+        router.push("/user/mag-simula");
+      }
+      if (test == 1) {
+        router.push("/user/home");
       }
     } catch (error) {
       console.error("Login failed", error);
@@ -63,8 +64,8 @@ export default function LoginPage() {
       <div className="container mx-auto flex flex-col items-center justify-center h-full">
         {/* Logo */}
         <div className="logo">
-          <img src="/userlogo.png" alt="Logo" className="w-[702px] h-[260px]" />
-        </div>
+    <img src="/userlogo.png" alt="Logo" className="w-[702px] h-[260px] animate-bounce" />
+</div>
         <div className="max-w-md mx-auto dark:bg-transparent bg-opacity-25 rounded-lg p-8">
           <div className="">
             <form onSubmit={handleSubmit}>
@@ -102,5 +103,6 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+    
   );
 }

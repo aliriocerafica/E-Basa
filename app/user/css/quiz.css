@@ -7,6 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Inter', sans-serif;
+
 
 }
 
@@ -43,4 +45,43 @@ border: 4px solid #FF8484; /* Change border color as needed */
 .fade-out {
 opacity: 0;
  
+}
+/* Define the animation */
+
+/* Define the animation */
+@keyframes breath {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Apply the animation to the image */
+.breath-animation {
+  animation: breath 4s infinite; /* Adjust duration and iteration as needed */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(2);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.choice-box {
+  transition: transform 0.2s ease-in-out;
+}
+
+.choice-box:hover {
+  transform: scale(1.05);
 }
