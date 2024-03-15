@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../../css/quiz.css";
@@ -21,7 +21,9 @@ const Kulay = () => {
   const [fadeOut, setFadeOut] = useState<boolean>(false);
 
   // Define state variables for category scores
-  const [categoryScores, setCategoryScores] = useState<{ [key: string]: number }>({
+  const [categoryScores, setCategoryScores] = useState<{
+    [key: string]: number;
+  }>({
     hugis: 0,
     kulay: 0,
     numero: 0,
@@ -60,22 +62,29 @@ const Kulay = () => {
   };
 
   const submitOption = (optionIndex: number) => {
-    const correctOptionIndex = questions[currentQuestionIndex].correct_option_index;
+    const correctOptionIndex =
+      questions[currentQuestionIndex].correct_option_index;
     const category = questions[currentQuestionIndex].category;
 
     // Check if the selected option is correct
     if (optionIndex === correctOptionIndex) {
       console.log("Correct Answer!");
-      console.log("The correct answer is:", questions[currentQuestionIndex].options[correctOptionIndex]);
+      console.log(
+        "The correct answer is:",
+        questions[currentQuestionIndex].options[correctOptionIndex]
+      );
 
       // Update the corresponding category score
-      setCategoryScores(prevScores => ({
+      setCategoryScores((prevScores) => ({
         ...prevScores,
         [category]: prevScores[category] + 1,
       }));
     } else {
       console.log("Wrong Answer!");
-      console.log("The correct answer is:", questions[currentQuestionIndex].options[correctOptionIndex]);
+      console.log(
+        "The correct answer is:",
+        questions[currentQuestionIndex].options[correctOptionIndex]
+      );
     }
 
     // Trigger fade out animation
@@ -87,7 +96,7 @@ const Kulay = () => {
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       setSelectedOption(null);
       setFadeOut(false); // Reset fade out state
     } else {
@@ -170,22 +179,20 @@ const Kulay = () => {
                 (optionText, optionIndex) => (
                   <li
                     key={optionIndex}
-                    className={`choice-box shadow-md mt-10 h-[240px] w-[240px] text-white rounded-lg font-normal mb-4 ${
+                    className={`choice-box shadow-md mt-10 h-[240px] w-[240px] text-white rounded-lg font-normal mb-4 flex justify-center items-center ${
                       selectedOption === optionIndex ? "selected" : ""
-                    } ${
-                      fadeOut ? "fade-out" : ""
-                    } `}
+                    } ${fadeOut ? "fade-out" : ""} `}
                     onClick={() => handleOptionClick(optionIndex)}
                     style={{
                       backgroundColor:
                         optionIndex === 0
-                          ? "#798BFF"
+                          ? "#258AFF"
                           : optionIndex === 1
-                          ? "#27939D"
+                          ? "#22FFFF"
                           : optionIndex === 2
-                          ? "#35F27F"
+                          ? "#DDFF0A"
                           : optionIndex === 3
-                          ? "#37C1FF"
+                          ? "#8FFF52"
                           : "",
                       transitionDuration:
                         selectedOption === optionIndex ? "0.6s" : "0.6s", // Adjust transition duration
@@ -200,16 +207,21 @@ const Kulay = () => {
                       optionIndex
                     ] !== "" && (
                       <img
-                        src={
-                          questions[currentQuestionIndex].option_images[
-                            optionIndex
-                          ]
-                        }
-                        className="option-image object-center"
-                        height={150}
-                        width={150}
-                        style={{ display: "block", margin: "0 auto" }}
-                      />
+                      src={
+                        questions[currentQuestionIndex].option_images[
+                          optionIndex
+                        ]
+                      }
+                      className="flex items-center justify-center "
+                      height={150}
+                      width={150}
+                      style={{
+                        objectPosition: "center",
+                        objectFit: "cover",
+                        display: "block",
+                        margin: "auto"
+                      }}
+                    />                    
                     )}
                     <div
                       className="text-[white] text-center"
@@ -228,4 +240,4 @@ const Kulay = () => {
   );
 };
 
-export default Kulay
+export default Kulay;
