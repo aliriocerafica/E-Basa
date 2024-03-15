@@ -142,7 +142,7 @@ const Kulay = () => {
             .join(", ")
         );
         console.log("Pre-test results added successfully");
-        router.push("/user/mag-simula");
+        router.push("/user/pre-test-result");
       } catch (error) {
         console.error("Error adding pretest result:", error);
       }
