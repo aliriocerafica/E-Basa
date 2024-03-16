@@ -1,0 +1,53 @@
+/* Set background image for the dashboard */
+
+@import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
+
+
+/* Other CSS styles */
+
+.dash1-bg {
+  background-image: url("/bgad.png");
+  /* background-color: #B7E9FF; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* This will make the background cover the entire viewport */
+}
+
+/* Add background color to the table */
+
+.heads {
+  background-color: white;
+  color: black;
+  font-family: 'Inter', sans-serif;
+  
+
+
+}
+.uppercase {
+  text-transform: none;
+}
+.header-act{
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 100%; /* Set the maximum width to 100% */
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+.bod{
+  font-family: 'Inter', sans-serif;
+}
+.bod {
+ 
+  border-top: 1px solid black; /* Add a 2px solid black border to the top of the tr */
+}
+
+/* Optional: Adjust padding for better spacing */
+.bod td {
+
+  padding: 10px 6px;
+}
