@@ -1,5 +1,5 @@
 .page-container {
-  background-image: url('/quizbg3.png'); /* Replace with the actual path to your image */
+  background-image: url('/bgnew1.png'); /* Replace with the actual path to your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,11 +12,23 @@
 
 }
 
+.page-container2 {
+  background-image: url('/bgnew1.png'); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Inter', sans-serif;
+}
+
 .h-20 {
   height: 2rem;
 }
 
-.page-container2 {
+.page-container3 {
 background-image: url('/menubg.png'); /* Replace with the actual path to your image */
 background-size: cover;
 background-position: center;
@@ -84,4 +96,7 @@ opacity: 0;
 
 .choice-box:hover {
   transform: scale(1.05);
+}
+.button button:hover {
+  background-color: #39B8FF;
 }

@@ -156,16 +156,16 @@ const Kulay = () => {
       <div className="">
         <div className="">
           <h2 className="text-center text-[60px] text-white">
-            {currentQuestionIndex + 1} / 80
+            {/* {currentQuestionIndex + 1} / 80 */}
           </h2>
         </div>
         {questions.length > 0 && (
-          <div className="w-[1400px] h-[700px] p-2 bg-[#20683C] border-8 border-[#BF977B] rounded-lg">
+          <div className="">
             <p className="text-[30px] text-white  mt-4 mb-4 text-center font-normal">
               Tanong: {questions[currentQuestionIndex].question_text}
             </p>
             {questions[currentQuestionIndex].question_image && (
-              <div className="image1 flex justify-center items-center">
+              <div className="image1 flex justify-center mt-20 items-center">
                 <img
                   src={questions[currentQuestionIndex].question_image}
                   className="option-image breath-animation"
@@ -176,63 +176,66 @@ const Kulay = () => {
             )}
             <ul className="Choice gap-8 flex flex-wrap justify-center items-center text-white text-shadow-md text-[45px]">
               {questions[currentQuestionIndex].options.map(
-                (optionText, optionIndex) => (
-                  <li
-                    key={optionIndex}
-                    className={`choice-box shadow-md mt-10 h-[240px] w-[240px] text-white rounded-lg font-normal mb-4 flex justify-center items-center ${
-                      selectedOption === optionIndex ? "selected" : ""
-                    } ${fadeOut ? "fade-out" : ""} `}
-                    onClick={() => handleOptionClick(optionIndex)}
-                    style={{
-                      backgroundColor:
-                        optionIndex === 0
-                          ? "#258AFF"
-                          : optionIndex === 1
-                          ? "#22FFFF"
-                          : optionIndex === 2
-                          ? "#DDFF0A"
-                          : optionIndex === 3
-                          ? "#8FFF52"
-                          : "",
-                      transitionDuration:
-                        selectedOption === optionIndex ? "0.6s" : "0.6s", // Adjust transition duration
-                      transform:
-                        selectedOption === optionIndex
-                          ? "rotateY(20deg)"
-                          : "none", // Apply 3D rotation when selected
-                      perspective: "1000px", // Adjust perspective for better 3D effect
-                    }}
-                  >
-                    {questions[currentQuestionIndex].option_images[
-                      optionIndex
-                    ] !== "" && (
-                      <img
-                      src={
-                        questions[currentQuestionIndex].option_images[
-                          optionIndex
-                        ]
-                      }
-                      className="flex items-center justify-center "
-                      height={150}
-                      width={150}
+                (optionText, optionIndex) => {
+                  const isSelected = selectedOption === optionIndex;
+                  const zIndex = isSelected ? 1 : 0;
+                  return (
+                    <li
+                      key={optionIndex}
+                      className={`choice-box shadow-md mt-20 h-[240px] w-[240px] text-white rounded-lg font-normal mb-4 flex justify-center items-center ${
+                        isSelected ? "selected" : ""
+                      } ${fadeOut ? "fade-out" : ""} `}
+                      onClick={() => handleOptionClick(optionIndex)}
                       style={{
-                        objectPosition: "center",
-                        objectFit: "cover",
-                        display: "block",
-                        margin: "auto"
+                        backgroundColor: "#DEDEDE", // white
+                        border: isSelected
+                          ? "8px solid #49ff00"
+                          : "2px solid #000000", // 8px green border when selected, 2px black border otherwise
+                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // shadow effect
+                        transition:
+                          "background-color 0.3s, transform 0.6s, border-color 0.3s", // Add transition for background color, transform, and border color
+                        transform: isSelected ? "rotateY(20deg)" : "none", // Apply 3D rotation when selected
+                        perspective: "1000px", // Adjust perspective for better 3D effect
+                        zIndex: zIndex, // Set z-index to bring the current question on top
                       }}
-                    />                    
-                    )}
-                    <div
-                      className="text-[white] text-center"
-                      style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
                     >
-                      <p>{optionText}</p>
-                    </div>
-                  </li>
-                )
+                      {questions[currentQuestionIndex].option_images[
+                        optionIndex
+                      ] !== "" && (
+                        <img
+                          src={
+                            questions[currentQuestionIndex].option_images[
+                              optionIndex
+                            ]
+                          }
+                          className="flex items-center justify-center "
+                          height={150}
+                          width={150}
+                          style={{
+                            objectPosition: "center",
+                            objectFit: "cover",
+                            display: "block",
+                            margin: "auto",
+                          }}
+                        />
+                      )}
+                      <div
+                        className="text-center"
+                        style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
+                      >
+                        <p style={{ color: "#000000" }}>{optionText}</p>{" "}
+                        {/* Set text color to black */}
+                      </div>
+                    </li>
+                  );
+                }
               )}
             </ul>
+            {/* <div className="button flex flex-col items-center mt-2">
+              <button className="h-[70px] w-[270px] items-center text-[30px] bg-[#0090DC] text-center p-3 rounded-lg border border-black">
+                Ipasa ang sagot
+              </button>
+            </div> */}
           </div>
         )}
       </div>
