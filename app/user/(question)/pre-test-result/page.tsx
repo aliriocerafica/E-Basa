@@ -80,7 +80,7 @@ const PreTestResult = () => {
             <p>Error: {error}</p>
           ) : user ? (
             <div>
-              <img src="/stage.png" className="absolute w-[450px] h-[200px] bottom-0 mb-[190px] ml-[-50px]" alt="Stage"></img>
+              <img src="/stage.png" className="absolute w-[450px] h-[200px] bottom-0 mb-[190px] ml-[-55px]" alt="Stage"></img>
               <img src={getImageUrl()} alt="No Grade" className='h-80 option-image breath-animation relative' />
               <br/>
               <br/>
