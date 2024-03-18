@@ -74,10 +74,12 @@ export function SideNav() {
                 <Chip value="" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
               </ListItemSuffix>
             </ListItem>
-            </Link>
+            </Link >
+            <Link href="/educ/test">
             <ListItem className="flex items-center test-side">
               <span className="ml-2 test">Test</span>
             </ListItem>
+            </Link>
             <ListItem className="flex items-center blank-side">
               <span className="ml-2 blank">Sample</span>
             </ListItem>
