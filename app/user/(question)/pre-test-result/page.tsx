@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import "../../css/quiz.css";
+import Link from 'next/link';
 
 const PreTestResult = () => {
   const [user, setUser] = useState<any>(null);
@@ -72,15 +73,16 @@ const PreTestResult = () => {
         <div className="flex flex-col items-center justify-center text-center">
           <h1 className='text-8xl pb-8'>"Pagbati"</h1>
           <p className='text-sky-400 pb-8'>Natapos mo ang unang pag sususlit</p>
+          <Link href="./home">
           <button className='bg-[#2B88BC] hover:bg-blue-700 shadow-md text-white font-bold py-2 px-4 rounded-[10px] pr-[100px] pl-[100px]'>Ipadala ang nakuhang grado</button>
-
+          </Link>
           {isLoading ? (
             <p>Loading...</p>
           ) : error ? (
             <p>Error: {error}</p>
           ) : user ? (
             <div>
-              <img src="/stage.png" className="absolute w-[450px] h-[200px] bottom-0 mb-[190px] ml-[-55px]" alt="Stage"></img>
+              <img src="/stage.png" className="fixed w-[450px] h-[200px] bottom-0 mb-[120px] ml-[-125px]" alt="Stage"></img>
               <img src={getImageUrl()} alt="No Grade" className='h-80 option-image breath-animation relative' />
               <br/>
               <br/>
