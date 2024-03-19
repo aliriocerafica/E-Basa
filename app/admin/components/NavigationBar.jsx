@@ -75,9 +75,11 @@ export function SideNav() {
               </ListItemSuffix>
             </ListItem>
             </Link>
+            <Link href="/admin/test">
             <ListItem className="flex items-center test-side">
               <span className="ml-2 test">Test</span>
             </ListItem>
+            </Link>
             <ListItem className="flex items-center blank-side">
               <span className="ml-2 blank">Sample</span>
             </ListItem>
