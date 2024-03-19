@@ -1,5 +1,6 @@
 import React from "react";
 import "../../css/quiz.css";
+import Link from "next/link";
 
 const Page = () => {
   return (
@@ -14,9 +15,11 @@ const Page = () => {
           sa napiling sagot pindutin itong muli upang maipasa ang iyong napiking sagot.
           </h1>
           <div className="button flex justify-center mt-[200px]"> 
+          <Link href="/user/pre-test">
         <button className="h-[70px] w-[270px] text-[30px] bg-[#0090DC] text-center p-3 rounded-lg border border-black">
           Mag-simula
         </button>
+        </Link>
         </div>
         </div>
       </div>

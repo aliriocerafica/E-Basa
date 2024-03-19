@@ -45,7 +45,7 @@ export default function LoginPage() {
       const test = data.test;
 
       if (test == 0) {
-        router.push("/user/mag-simula");
+        router.push("/user/panuto1");
       }
       if (test == 1) {
         router.push("/user/home");
