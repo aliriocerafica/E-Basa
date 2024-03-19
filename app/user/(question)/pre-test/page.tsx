@@ -162,7 +162,7 @@ const Kulay = () => {
         {questions.length > 0 && (
           <div className="">
             <p className="text-[30px] text-white  mt-4 mb-4 text-center font-normal">
-              Tanong: {questions[currentQuestionIndex].question_text}
+            {currentQuestionIndex + 1}. {questions[currentQuestionIndex].question_text}
             </p>
             {questions[currentQuestionIndex].question_image && (
               <div className="image1 flex justify-center mt-20 items-center">
