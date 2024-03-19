@@ -90,7 +90,7 @@ const EditStudent: React.FC = () => {
 
     try {
         const response = await fetch(`http://localhost:8000/users/${userId}`, {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -111,11 +111,6 @@ const EditStudent: React.FC = () => {
     }
 };
 
-
-  
-
-
-  
   return (
     <div className="dash-bg">
       <div className="justify-center head pt-[120px]">
