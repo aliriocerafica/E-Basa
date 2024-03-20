@@ -1,5 +1,5 @@
 .page-container {
-  background-image: url('/userbg2.png'); /* Replace with the actual path to your image */
+  background-image: url('/userbg4.png'); /* Replace with the actual path to your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,6 +19,8 @@
 .section1,
 .section2 {
   background-color: white;
+  width: auto;
+  height: auto;
   padding: 20px;
   margin: 10px; /* Adjust as needed for spacing between sections */
 }
@@ -67,4 +69,7 @@
     transform: none;
     margin-top: 10px; /* Adjust as needed */
   }
+}
+.sidenav{
+  background-color: white;
 }
