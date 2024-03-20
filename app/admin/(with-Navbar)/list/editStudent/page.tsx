@@ -1,14 +1,9 @@
-//app\admin\list\EditStudent\page.tsx
-"use client";
-import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
-import "../../../css/dash.css";
+'use client';
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation';
 
-
-
-interface FormData {
-  user_type: string;
-  test: string;
+interface User {
+  username: string;
   firstname: string;
   lastname: string;
   middle_initial: string;
@@ -16,100 +11,87 @@ interface FormData {
   email: string;
   gender: string;
   school: string;
-  username: string;
   password: string;
-  confirmPassword: string;
 }
 
-const EditStudent: React.FC = () => {
-    const [users, setUsers] = useState<User[]>([]);
-    const [formData, setFormData] = useState<User>({
-      firstname: '',
-      lastname: '',
-      middle_initial: '',
-      age: '',
-      email: '',
-      gender: '',
-      school: '',
-      username: '',
-      password: '',
-    });
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
+const UpdateStudent: React.FC = () => {
+  const [formData, setFormData] = useState<User>({
+    username: "",
+    firstname: "",
+    lastname: "",
+    middle_initial: "",
+    age: "",
+    email: "",
+    gender: "",
+    school: "",
+    password: ""
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   
-    const searchParams = useSearchParams();
-    const userId = searchParams.get('user_id');
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        setError(null);
-        setIsLoading(true);
-  
-        try {
-          if (!userId) {
-            throw new Error('Missing user ID in search parameters');
-          }
-  
-          const response = await fetch(`http://localhost:8000/users/${userId}`);
-  
-          if (!response.ok) {
-            throw new Error(await response.text());
-          }
-  
-          const data = await response.json();
-          setFormData({
-            firstname: data.firstname,
-            lastname: data.lastname,
-            middle_initial: data.middle_initial,
-            age: data.age.toString(),
-            email: data.email,
-            gender: data.gender,
-            school: data.school,
-            username: data.username,
-            password: data.password,
-          });
-        } catch (err) {
-          setError(err instanceof Error ? err.message : 'An unknown error occurred');
-        } finally {
-          setIsLoading(false); // Set loading to false once data fetching is done
+  const searchParams = useSearchParams();
+  const userId = searchParams.get('user_id');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setError(null);
+      setIsLoading(true);
+
+      try {
+        if (!userId) {
+          throw new Error('Missing user ID in search parameters');
         }
-      };
-  
-      fetchData();
-    }, [userId]);
-  
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
+
+        const response = await fetch(`http://localhost:8000/users/${userId}`);
+
+        if (!response.ok) {
+          throw new Error(await response.text());
+        }
+
+        const data: User = await response.json();
+        setFormData(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      } finally {
+        setIsLoading(false);
+      }
     };
-  
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>, formData: any) => {
+
+    fetchData();
+  }, [userId]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
 
     try {
-        const response = await fetch(`http://localhost:8000/users/${userId}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
+      const response = await fetch(`http://localhost:8000/users/${userId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-        if (!response.ok) {
-            throw new Error(await response.text());
-        }
+      if (!response.ok) {
+        throw new Error(await response.text());
+      }
 
-        // Assuming successful update, you might want to handle the response accordingly
-        const updatedData = await response.json();
-        console.log('User updated:', updatedData);
+      // Assuming successful update, you might want to handle the response accordingly
+      const updatedData = await response.json();
+      console.log('User updated:', updatedData);
     } catch (err) {
-        setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      setError(err instanceof Error ? err.message : 'An unknown error occurred');
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
-};
+  };
 
   return (
     <div className="dash-bg">
@@ -118,37 +100,25 @@ const EditStudent: React.FC = () => {
           <title>Edit Student</title>
           Edit Student Account
         </header>
-     
-    <div className="flex justify-center items-center p-[20px]">
-    <div className="bg-white rounded-lg bg-opacity-50">
-
-        {/* Centering container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          {/* Left column */}
-          <div className="relative bg-[#13DFFE] rounded-lg m-1 p-10 flex flex-col justify-center items-center">
-            {/* Left Column Content */}
-            <img
-              src="/student.png"
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-10 h-[300px] "
-              alt="Centered image"
-            />
-            <label className="block mt-[70px]">
-              <span className="sr-only">Choose profile photo</span>
-              <input
-                type="file"
-                // onChange={loadFile}
-                className="block w-full text-sm shadow-md rounded-full text-black-500
-                file:mr-4 file:py-2 file:px-4
-                file:rounded-full file:border-0
-                file:text-sm file:font-semibold
-                file:bg-[#A1E67D] file:text-black-700
-                hover:file:bg-white"
+      </div>
+      <div className="flex justify-center items-center p-[20px]">
+        <div className="bg-white rounded-lg bg-opacity-50">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+            <div className="relative bg-[#13DFFE] rounded-lg m-1 p-10 flex flex-col justify-center items-center">
+              <img
+                src="/student.png"
+                className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-10 h-[300px] "
+                alt="Centered image"
               />
-            </label>
-          </div>
-
-          {/* Right column */}
-          <div className="bg-white bg-opacity-0  p-4 rounded-lg ">
+              <label className="block mt-[70px]">
+                <span className="sr-only">Choose profile photo</span>
+                <input
+                  type="file"
+                  className="block w-full text-sm shadow-md rounded-full text-black-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#A1E67D] file:text-black-700 hover:file:bg-white"
+                />
+              </label>
+            </div>
+            <div className="bg-white bg-opacity-0  p-4 rounded-lg ">
             <form className="w-full max-w-lg" onSubmit={handleSubmit}>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/1 px-3 mb-6 md:mb-0">
@@ -298,7 +268,7 @@ const EditStudent: React.FC = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-full md:w-1/2 px-3 pt-3">
+                {/* <div className="w-full md:w-1/2 px-3 pt-3">
                   <label
                     className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     htmlFor="grid-confirm-password"
@@ -314,20 +284,19 @@ const EditStudent: React.FC = () => {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                   />
-                </div>
+                </div> */}
               </div>
               <button className="bg-[#6FD03D] hover:bg-blue-700   shadow-md text-white font-bold py-2 px-4 rounded-[10px] pr-[100px] pl-[100px]">
                 Save Changes
               </button>
-              {/* Additional form fields go here */}
             </form>
+              {error && <p className="text-red-500">{error}</p>}
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    </div>
   );
 };
 
-export default EditStudent;
+export default UpdateStudent;
