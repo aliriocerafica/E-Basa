@@ -1,22 +1,20 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import UserNav from "../../components/UserNav";
 import "../../css/userpage.css";
 import SideNav from "../../components/SideNav";
 
 export default function Home() {
-  console.log(localStorage.getItem("access_token"));
-  console.log(localStorage.getItem("user_id"));
   return (
     <div className="page-container">
       <UserNav />
       <SideNav />
       <div className="prev mr-20">
-        <img src="/prev.png"></img>
+        <img src="/prev.png" alt="Previous" />
       </div>
       <div className="section1 place-self-center bg-white shadow-md rounded-lg">
         <div className="headerimg bg-[#13DFFE] h-[300px] w-[400px] mb-10 rounded-lg">
-          <img src="/aral.png"></img>
+          <img src="/aral.png" alt="Header 1" />
         </div>
         <div className="section-content">
           <h2 className="section-header font-bold text-center text-[30px] rounded-[5px] text-black mb-2 p-1">
@@ -31,7 +29,7 @@ export default function Home() {
       </div>
       <div className="section2 bg-white ml-10 shadow-md rounded-lg">
         <div className="headerimg bg-[#13DFFE] h-[300px] w-[400px] mb-10 rounded-lg">
-          <img src="/Gawa.png"></img>
+          <img src="/Gawa.png" alt="Header 2" />
         </div>
         <div className="section-content">
           <h2 className="section-header  font-bold text-center text-[30px] rounded-[5px] text-black mb-2 p-1">
@@ -45,7 +43,7 @@ export default function Home() {
         </div>
       </div>
       <div className="next ml-20">
-        <img src="/next.png"></img>
+        <img src="/next.png" alt="Next" />
       </div>
     </div>
   );

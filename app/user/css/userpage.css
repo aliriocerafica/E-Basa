@@ -1,5 +1,5 @@
 .page-container {
-  background-image: url('/userbg4.png'); /* Replace with the actual path to your image */
+  background-image: url('/userbg4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -7,10 +7,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
+
 .page-container2 {
-  background-image: url('/userbg4.png'); /* Replace with the actual path to your image */
+  background-image: url('/userbg4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,13 +18,12 @@
   display: flex;
   justify-content: center;
   padding-top: 150px;
-  /* align-items: center; */
-
 }
+
 .content-wrapper {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  justify-content: center; /* Center items horizontally */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .section1,
@@ -33,7 +32,7 @@
   width: auto;
   height: auto;
   padding: 20px;
-  margin: 10px; /* Adjust as needed for spacing between sections */
+  margin: 10px;
 }
 
 .image-container {
@@ -43,15 +42,15 @@
 
 .section-image {
   height: 500px;
-  width: 400px; /* Adjust as needed */
+  width: 400px;
   float: center;
 }
 
 .image-button {
   position: absolute;
-  bottom: 10px; /* Adjust as needed */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 10px 20px;
   color: white;
   border: none;
@@ -70,29 +69,48 @@
   .section1,
   .section2 {
     margin-left: 0;
-    margin-top: 10px; /* Adjust as needed */
+    margin-top: 10px;
     width: auto;
   }
-
+  .section1,
+  .section2 {
+    background-color: white;
+    width: 45%; /* Adjust the width as needed */
+    max-width: 400px; /* Limit the maximum width if necessary */
+    height: auto;
+    padding: 20px;
+    margin: 10px;
+  }
   .image-button {
     position: relative;
     left: auto;
     transform: none;
-    margin-top: 10px; /* Adjust as needed */
+    margin-top: 10px;
+  }
+
+  .prev,
+  .next {
+    display: flex;
+    justify-content: center;
+  }
+
+  .prev img,
+  .next img {
+    max-width: 100%;
+    height: auto;
   }
 }
-.sidenav{
-  background-color: white;
-}
-.prev,
-.next {
-  display: flex;
-  align-items: center;
+
+/* Header Image Styles */
+.headerimg {
+  background-color: #13DFFE;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  overflow: hidden; /* Ensure the image stays within the rounded corners */
 }
 
-.prev img,
-.next img {
-  display: block;
-  max-width: 100%;
+.headerimg img {
+  width: 100%;
   height: auto;
+  display: block;
 }

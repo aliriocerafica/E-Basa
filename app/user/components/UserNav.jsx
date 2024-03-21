@@ -1,4 +1,3 @@
-"use client"
 import React, { useState } from "react";
 
 const UserNav = () => {
@@ -9,13 +8,11 @@ const UserNav = () => {
   };
 
   return (
-
-    <nav className="bg-[#FFFFFF]  fixed z-20 top-0 left-0 h-[65px] right-0 mx-auto rounded-br-[20px] rounded-bl-[20px] shadow-md w-[70%]  font-sans">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+    <nav className="bg-[#FFFFFF] h-[70px] fixed z-20 top-0 left-0 right-0 mx-auto rounded-br-[20px] rounded-bl-[20px] shadow-md w-[70%] font-sans">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2">
         <a
           href="https://flowbite.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
-          s
         >
           <img src="/logo4.png" className="h-18" alt="Flowbite Logo" />
         </a>
@@ -31,6 +28,7 @@ const UserNav = () => {
               src="/rank.png"
               alt="Lime"
               className="w-full h-full object-cover"
+              style={{ maxWidth: "100%" }}
             />
           </button>
 
@@ -39,6 +37,7 @@ const UserNav = () => {
               src="/Profile.png"
               className="h-18 mb-[4px]"
               alt="Get Started"
+              style={{ maxWidth: "100%" }}
             />
           </a>
           <button
