@@ -69,30 +69,32 @@ const PreTestResult = () => {
 
   return (
     <div className="page-container flex flex-wrap">
-      <div className="w-[1400px] h-[700px] p-2 bg-[#20683C] border-8 border-[#BF977B] rounded-lg">
+      <div className="">
         <div className="flex flex-col items-center justify-center text-center">
-          <h1 className='text-8xl pb-8'>"Pagbati"</h1>
-          <p className='text-sky-400 pb-8'>Natapos mo ang unang pag sususlit</p>
-          <Link href="./home">
-          <button className='bg-[#2B88BC] hover:bg-blue-700 shadow-md text-white font-bold py-2 px-4 rounded-[10px] pr-[100px] pl-[100px]'>Ipadala ang nakuhang grado</button>
-          </Link>
+          <h1 className='text-[60px] pb-8 text-sky-400 mt-20'>"Pagbati munting mag-aaral "</h1>
+          <p className=' pb-8 text-[30px]'>Natapos mo ang unang pag sususlit</p>
+          <p className='  text-sky-400 text-[40px]'>{totalScore}/80</p>
           {isLoading ? (
             <p>Loading...</p>
           ) : error ? (
             <p>Error: {error}</p>
           ) : user ? (
             <div>
-              <img src="/stage.png" className="fixed w-[450px] h-[200px] bottom-0 mb-[120px] ml-[-125px]" alt="Stage"></img>
+              {/* <img src="/stage.png" className="fixed w-[450px] h-[200px] bottom-0 mb-[150px] ml-[-125px]" alt="Stage"></img> */}
               <img src={getImageUrl()} alt="No Grade" className='h-80 option-image breath-animation relative' />
               <br/>
               <br/>
               <br/>
-              <p className='text-slate-50 text-[40px]'>{totalScore}/80</p>
-              
+             
+      
             </div>
           ) : (
             <p>No user data found</p>
-          )}
+          )} 
+          <Link href="./home">
+          <button className='bg-[#2B88BC] hover:bg-blue-700 shadow-md text-white font-bold  mb-[100px] h-[70px] py-2 rounded-[10px] pr-[100px] pl-[100px]'>Ipadala ang nakuhang grado</button>
+          </Link>
+         
         </div>
       </div>
     </div>
