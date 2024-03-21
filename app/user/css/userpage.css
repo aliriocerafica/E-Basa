@@ -9,7 +9,18 @@
   align-items: center;
 
 }
+.page-container2 {
+  background-image: url('/userbg4.png'); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  /* align-items: center; */
 
+}
 .content-wrapper {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next line */
@@ -72,4 +83,16 @@
 }
 .sidenav{
   background-color: white;
+}
+.prev,
+.next {
+  display: flex;
+  align-items: center;
+}
+
+.prev img,
+.next img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
