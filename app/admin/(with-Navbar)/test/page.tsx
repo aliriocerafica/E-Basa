@@ -21,7 +21,7 @@ const Test = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch("http://localhost:8000/pretest/question");
+        const response = await fetch("http://localhost:8000/question/pretest/");
         if (response.ok) {
           const data = await response.json();
           setQuestions(data);
@@ -56,8 +56,8 @@ const Test = () => {
 
   const saveChanges = async () => {
     try {
-      const response = await fetch("http://localhost:8000/pretest/question", {
-        method: "POST",
+      const response = await fetch("http://localhost:8000/question/pretest/{question_id}", {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json"
         },
@@ -84,65 +84,56 @@ const Test = () => {
   const currentQuestions = questions.slice(startIndex, endIndex);
 
   return (
-    <div className="page-container flex flex-wrap">
-      <div className="">
-        <div className="question-container">
-          {currentQuestions.map((question, index) => (
-            <div key={question.id} className="question">
-              <input
-                type="text"
-                value={question.question_text}
-                onChange={(e) => handleQuestionTextChange(e, index)}
-              />
-              {question.question_image && (
-                <div className="image1 flex justify-center items-center">
-                  <img
-                    src={question.question_image}
-                    className="question-image"
-                    height={200}
-                    width={200}
-                    alt={`Question ${index + 1 + startIndex} Image`}
-                  />
+    <div className="bg-teal-100" style={{ display: "flex", justifyContent: "center" }}>
+      <div className="container" style={{ width: "80%" }}>
+        <div className=" bg-white rounded-md mt-10 mb-10 font-bold">
+          <h1>Pre test</h1>
+        </div>
+        <div className="pull-left bg-white rounded-md mt-10 mb-10 font-bold">
+          <label>Category:</label>
+          <span>{questions.length > 0 ? questions[0].category : ""}</span>
+        </div>
+        {currentQuestions.map((question, index) => (
+          <div key={question.id} style={{ padding: "10px", marginBottom: "20px" }} className="rounded-lg bg-white">
+            <h2 className="text-orange-500 font-bold">Question {index + 1}</h2>
+            {(question.question_text || question.question_image) && (
+              <>
+                {question.question_text && (
+                  <input type="text" value={question.question_text} onChange={(e) => handleQuestionTextChange(e, index)} style={{ width: "50%" }}/>
+                )}
+                {question.question_image && (
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={question.question_image} alt={`Question ${index + 1} Image`} style={{ maxWidth: "300px", maxHeight: "300px", marginBottom: "10px" }} />
+                  </div>
+                )}
+              </>
+            )}
+            <div style={{ display: "flex", flexWrap: "wrap" }} >
+              {question.options.map((option, optionIndex) => (
+                <div key={optionIndex} style={{ width: "17%", marginRight: "10px", marginLeft: "10px"}} >
+                  <div className="rounded-md mt-5" style={{ border: "1px solid #ccc", padding: "10px", marginBottom: "10px", backgroundColor: optionIndex === 0 ? "#62FF12" : "white", color: "black", }}>
+                    <div style={{ backgroundColor: optionIndex === 0 ? "#62FF12" : "white" }}>
+                      <input type="text" value={option} style={{backgroundColor: "#62FF12"}} onChange={(e) => handleOptionTextChange(e, index, optionIndex)} />
+                    </div>
+                    {question.option_images[optionIndex] && (
+                      <div>
+                        <img src={question.option_images[optionIndex]} alt={`Option ${optionIndex + 1} Image`} style={{ maxWidth: "100%", height: "auto" }} />
+                      </div>
+                    )}
+                  </div>
                 </div>
-              )}
-              <ul className="answers-container horizontal-list">
-                {question.options.map((optionText, optionIndex) => (
-                  <li
-                    key={optionIndex}
-                    className="answer-box"
-                  >
-                    <input
-                      type="text"
-                      value={optionText}
-                      onChange={(e) => handleOptionTextChange(e, index, optionIndex)}
-                    />
-                    <input
-                      type="text"
-                      value={question.option_images[optionIndex]}
-                      onChange={(e) => handleOptionImageChange(e, index, optionIndex)}
-                    />
-                  </li>
-                ))}
-              </ul>
+              ))}
             </div>
-          ))}
+          </div>
+        ))}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
+          <button disabled={currentPage === 1} onClick={() => setCurrentPage((prevPage) => prevPage - 1)}>Previous</button>
+          <span style={{ margin: "0 10px" }}>{`Page ${currentPage} of ${totalPages}`}</span>
+          <button disabled={currentPage === totalPages} onClick={() => setCurrentPage((prevPage) => prevPage + 1)}>Next</button>
         </div>
-        <div className="pagination">
-          <button
-            onClick={() => setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))}
-            disabled={currentPage === 1}
-          >
-            Previous
-          </button>
-          <span>{currentPage} / {totalPages}</span>
-          <button
-            onClick={() => setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages))}
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <button onClick={saveChanges}>Save Changes</button>
         </div>
-        <button onClick={saveChanges}>Save Changes</button>
       </div>
     </div>
   );

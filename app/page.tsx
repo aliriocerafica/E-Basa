@@ -10,7 +10,7 @@ const Page: React.FC = () => {
             estudyante
           </div>
         </Link>
-        <Link href="/educ">
+        <Link href="/admin">
           <div className="bg-cyan-400 hover:bg-sky-300 text-2xl text-white py-2 px-16 rounded-full focus:outline-none focus:shadow-outline relative shadow-md submit-button button-text-shadow">
             Guro/admin
           </div>

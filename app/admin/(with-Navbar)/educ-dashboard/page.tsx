@@ -6,7 +6,7 @@ const Dashboard = () => {
    
  
   return (  
-    <div className="dash1-bg">
+    <div className="">
           <title>Dashboard</title>
        < Name />
       <div className="header-act ml-[385px] w-[1380px] mt-10" >
@@ -44,8 +44,8 @@ const Dashboard = () => {
           <tr className="bod text-[16px] ">
           <td className="px-6 text-center py-4 whitespace-nowrap">k112</td>
               <td className="px-6 text-center py-4 whitespace-nowrap">Jane Doe</td>
-              <td className="px-6 text-center py-4 whitespace-nowrap">October 23 , 2023  - 8:00 AM</td>
-              <td className="px-6 text-center py-4 whitespace-nowrap">Admin</td>
+              <td className="px-6 text-center py-4 whitespace-nowrap">March 21 , 2023  - 8:00 AM</td>
+              <td className="px-6 text-center py-4 whitespace-nowrap">Educator</td>
               <td className="px-6 text-center py-4 whitespace-nowrap">
                 <span className="px-4 inline-flex text-center text-[14px] leading-5 font-semibold rounded-full bg-[#2ADBA3] text-white shadow-md">
                   Active
