@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const Page: React.FC = () => {
   return (
+    <div className="dash-bg">
     <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col items-center space-y-4">
         <Link href="/user">
@@ -16,6 +17,7 @@ const Page: React.FC = () => {
           </div>
         </Link>
       </div>
+    </div>
     </div>
   );
 };

@@ -185,7 +185,7 @@ export default function Barchart() {
   // Render the rest of the component
   return (
     <>
-      <div className="dash-bg">
+      <div className="">
         <title>Test Summary</title>
         <div className="student-test">
           <h1 className="studenthead">Student Grade</h1>

@@ -9,7 +9,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className="bg-teal-100">
+      <body className="">
         <NavigationBar />
         {children}
       </body>

@@ -84,7 +84,7 @@ const Test = () => {
   const currentQuestions = questions.slice(startIndex, endIndex);
 
   return (
-    <div className="bg-teal-100" style={{ display: "flex", justifyContent: "center" }}>
+    <div className="" style={{ display: "flex", justifyContent: "center" }}>
       <div className="container" style={{ width: "80%" }}>
         <div className=" bg-white rounded-md mt-10 mb-10 font-bold">
           <h1>Pre test</h1>

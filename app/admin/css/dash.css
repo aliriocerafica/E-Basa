@@ -20,9 +20,6 @@
   background-color: white;
   color: black;
   font-family: 'Inter', sans-serif;
-  
-
-
 }
 .uppercase {
   text-transform: none;
@@ -50,4 +47,8 @@
 .bod td {
 
   padding: 10px 6px;
+}
+
+body{
+  background-color: rgba(204,251,241,255);
 }
